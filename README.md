@@ -11,8 +11,14 @@ and the developer platform into one unified experience.
 
 ## What's inside
 
-- **Landing** — the Entelloq wordmark over a live animated network that connects every
-  product node, with soft aurora gradients and ambient particles.
+- **Landing** — the Entelloq sentinel mark and serif wordmark over a live animated network
+  that connects every product node, with the brand creed
+  *Intelligence · Innovation · Impact* and soft aurora gradients.
+- **Philosophy** — the meaning of the name (EN · TEL · LOQ, pronounced *en-TELL-ock*):
+  Intelligent Communication, Expanding Learning, Expanding Options in Trading,
+  Quantitative Precision.
+- **Founder** — Darsh Prasad, who designs, engineers and ships the entire ecosystem
+  end-to-end, with contact links and network stats.
 - **Global search (⌘K / Ctrl K / `/`)** — a command palette that intelligently routes any
   query to the right application: *"Projectile Motion"* → Physics Entelloq,
   *"Black-Scholes"* → Quant Entelloq, *"Research on Quantum Computing"* → Entelloq Research.
@@ -49,9 +55,9 @@ product goes live, flip its status to `'beta'` or `'live'` and confirm its URL.
 
 ## Design language
 
-Dark ink (`#05070E`), glassmorphism, hairline borders, Space Grotesk display type over
-Inter, and the Entelloq brand gradient (periwinkle `#7AA7FF` → violet `#A78BFA`) shared
-with the [press & media kit](https://github.com/darshprasad-cmd/entelloq-networks).
+Near-black ink (`#050506`), glassmorphism, hairline borders, and the official Entelloq
+identity: the sentinel head-in-ring mark with circuit traces, a Cinzel (Trajan-style)
+metallic serif wordmark, steel-blue `#8FAECE` accents and the trading gold `#D9A94F`.
 Each product carries its own accent hue across cards, dock, palette and the background
 network. Honours `prefers-reduced-motion`.
 

@@ -3,60 +3,49 @@
 **One ecosystem. Infinite learning.**
 *Intelligence · Innovation · Impact — pronounced en-TELL-ock.*
 
-This is the website of the **mother company**: an airport terminal, not a shopping mall.
-Its whole job is to answer three questions within 15 seconds — *What is Entelloq? Which
-product do I need? How do I get there?* — and then route you to the right subdomain in
-one click. It never competes with the apps; it launches them.
+The website of the mother company — an airport terminal, not a shopping mall. It answers
+three questions in fifteen seconds (*What is Entelloq? Which app do I need? How do I get
+there?*) and routes you to the right subdomain in one click.
 
 **Live:** https://darshprasad-cmd.github.io/entelloq-command/
 
 ## What's inside
 
-- **Hero** — "Building AI-powered learning and research ecosystems", over a live animated
-  network connecting every product, with global search and try-me hint chips.
-- **Product Launchpad** ⭐ — the heart of the site. A radial map of all 8 products around
-  the Entelloq hub; hovering a node expands a preview (description, feature bullets,
-  Launch →) in the hub, clicking routes straight to the product's subdomain. Falls back
-  to a tap-friendly grid on mobile.
-- **Featured Apps** — large cards for the flagships (Physics, Quant, Bio) with status,
-  users, latest update and stars.
-- **Why Entelloq** — Learn / Research / Build.
-- **Research Hub** — latest paper, article and experiment.
-- **Community** — honest network stats with scroll-triggered count-up.
-- **Developers** — Documentation, API Reference, Status, GitHub.
-- **Latest Updates** — a shipping timeline.
-- **About** — mission, vision, founder (Darsh Prasad), company timeline, and the full
-  brand lockup.
-- ⭐ **Command palette** — Ctrl K / ⌘K / `/`. Smart routing: *Projectile Motion* →
-  Physics, *Black-Scholes* / *CAPM* → Quant, *DNA* / *Genome* → Bio, *Quantum Research* →
-  Research, *docs* → Documentation.
-- ⭐ **App switcher** — the nav's "Launch App →" button and a floating **◉ Apps** button
-  open a switcher where every app is one click away.
-- **Light/dark** — white-with-graphite by default, seamless dark toggle, persisted.
+- **Hero** — "The platform that doesn't just teach. It helps you finally understand." —
+  with the *South Asian Herald* press badge, global search and try-me hint chips, over a
+  live animated network connecting the apps.
+- **Product Launchpad** — Physics, Quant and Bio orbit the Entelloq hub; hover a node and
+  the hub becomes a preview, click and you're there.
+- **The Apps** — real screenshots of each product in browser-frame cards (taken from the
+  actual apps), with the standout features as chips: Physics ("Physics, finally
+  engineered." — 21+ live simulations, 89+ concepts), Quant ("Learn to trade with an AI
+  coach, using zero real money."), Bio ("All of life, on one map you can touch.").
+- **Press** — the South Asian Herald feature (July 30, 2026, by Vivek Das) with pull
+  quotes, linked to the article.
+- **Philosophy** — the founder's creed as a quote band plus three principle cards, all
+  drawn from the press feature.
+- **Founder** — Darsh Prasad's story: the physics-classroom observation, the markets
+  pattern, and the environment he's building; contact links and the press feature.
+- **Numbers, Updates, About** — honest stats with count-up, a shipping timeline, and
+  mission/vision/name-meaning with the full brand lockup.
+- ⭐ **Command palette** (Ctrl K / ⌘K / `/`) — smart routing: *Projectile Motion* /
+  *Newton's Laws* → Physics, *Black-Scholes* / *CAPM* → Quant, *DNA* / *Genome* → Bio,
+  plus company destinations (press feature, founder).
+- ⭐ **App switcher** — nav "Launch App →" and the floating **◉ Apps** button.
+- **Light/dark** — white-with-graphite by default, seamless persisted dark toggle.
 
-## The real logo
+## The real assets
 
-The actual Entelloq Networks brand art (the sentinel head-in-ring mark and the full
-lockup banner) is embedded in the file as base64 — the mark once (reused everywhere via
-JS, including the favicon), the banner once in About. No external image requests.
+The actual Entelloq brand art (sentinel head-in-ring mark + full lockup banner) and three
+real product screenshots are embedded as base64 — zero external image requests. The mark
+is embedded once and reused everywhere (including the favicon) via JS.
 
 ## Architecture
 
-The entire site is **one self-contained HTML file** — no build step, no framework.
-All ecosystem data lives in a CONFIG block at the top of the script:
-
-| Constant         | Drives                                                        |
-|------------------|---------------------------------------------------------------|
-| `PRODUCTS`       | Launchpad map, app switcher, footer, search routing, canvas   |
-| `TOPICS`         | Topic → product routing ("CAPM" → Quant)                      |
-| `FEATURED`       | The three flagship cards                                      |
-| `RESEARCH_ITEMS` | The Research Hub cards                                        |
-| `STATS`          | Community numbers                                             |
-| `UPDATES`        | The updates timeline                                          |
-
-**To add a product**: one entry in `PRODUCTS` (name, accent, description, bullets,
-status, version, URL, keywords). Products with `status:'soon'` toast instead of
-navigating, so nothing links to a dead page.
+One self-contained HTML file, no build step. All ecosystem data lives in a CONFIG block:
+`PRODUCTS` (drives launchpad, showcase rows, switcher, footer, search, canvas), `TOPICS`
+(topic → app routing), `ACTIONS` (company destinations in the palette), `STATS`,
+`UPDATES`. Add an app = one entry in `PRODUCTS` plus a screenshot.
 
 **Product URLs**: Quant is live at `quant.entelloq.com`; Physics and Biology point at
 their future subdomains — update when deployed.

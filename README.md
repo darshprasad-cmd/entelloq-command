@@ -7,7 +7,7 @@ The corporate website of Entelloq Networks. It answers three questions in fiftee
 seconds — *What is Entelloq? Which product do I need? How do I get there?* — and routes
 visitors to the right product in one click.
 
-**Live:** https://darshprasad-cmd.github.io/entelloq-command/
+**Live:** https://entelloq.com (GitHub Pages; fallback https://darshprasad-cmd.github.io/entelloq-command/)
 
 ## Sections
 

@@ -9,6 +9,15 @@
 <meta property="og:description" content="Building AI-powered learning and research ecosystems — physics, quantitative finance and biology, on one connected platform.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://entelloq.com/">
+<meta property="og:site_name" content="Entelloq Networks">
+<meta property="og:image" content="https://entelloq.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Entelloq Networks — anyone willing to learn should genuinely understand.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Entelloq Networks">
+<meta name="twitter:description" content="AI-powered learning ecosystems — physics, quantitative finance and biology.">
+<meta name="twitter:image" content="https://entelloq.com/og.jpg">
 <link rel="canonical" href="https://entelloq.com/">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" id="favicon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="%23101216"/><circle cx="16" cy="16" r="11" stroke="%23AEB4C0" stroke-width="1.5" fill="none" opacity=".6" stroke-dasharray="52 17"/><circle cx="16" cy="16" r="3.4" fill="%23AEB4C0"/></svg>'>
@@ -19,6 +28,8 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Entelloq Networks",
  "slogan":"One ecosystem. Infinite learning.",
  "url":"https://entelloq.com/",
+ "logo":"https://entelloq.com/og.jpg",
+ "image":"https://entelloq.com/og.jpg",
  "email":"mailto:entelloqnetworks@gmail.com",
  "sameAs":["https://x.com/Entelloqnetwork",
            "https://www.linkedin.com/in/entelloq-networks",
@@ -423,7 +434,7 @@ main{ position:relative; z-index:1; }
 footer{
   border-top:1px solid var(--hair-2);
   background:var(--bg-alt);
-  padding:56px 0 40px;
+  padding:56px 0 88px;   /* 88px keeps the assistant FAB off the footer text at every width */
 }
 .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:28px; }
 .foot-brand{ display:flex; flex-direction:column; gap:14px; }
@@ -507,6 +518,7 @@ footer{
 .pal-item.sel{ background:color-mix(in srgb, var(--steel) 10%, transparent); }
 .pal-item.sel .go{ opacity:1; }
 .pal-empty{ padding:34px 20px; text-align:center; color:var(--dim); font-size:.88rem; }
+.sr-only{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 .pal-foot{ display:flex; gap:18px; padding:11px 20px; border-top:1px solid var(--hair-2); font-size:.68rem; color:var(--dim); font-family:var(--mono); }
 .pal-foot b{ font-weight:400; color:var(--muted); border:1px solid var(--hair-2); border-radius:5px; padding:1px 6px; margin-right:6px; }
 
@@ -678,7 +690,6 @@ footer{
     height:min(84dvh, 620px);   /* dvh keeps the sheet clear of mobile browser chrome */
   }
   .ag-note{ padding-bottom:max(12px, env(safe-area-inset-bottom)); }
-  footer{ padding-bottom:88px; }   /* reserve the FAB's band so it never sits on the footer */
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -981,10 +992,13 @@ footer{
   <div class="sheet">
     <div class="pal-in">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
-      <input id="pal-input" type="text" placeholder="Search products, topics, or company information" autocomplete="off" spellcheck="false">
+      <input id="pal-input" type="text" placeholder="Search products, topics, or company information"
+             autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true"
+             aria-controls="pal-list" aria-autocomplete="list" aria-label="Search Entelloq">
       <kbd>esc</kbd>
     </div>
-    <div class="pal-list" id="pal-list"></div>
+    <div class="pal-list" id="pal-list" role="listbox" aria-label="Search results"></div>
+    <p id="pal-count" class="sr-only">0 results</p>
     <div class="pal-foot">
       <span><b>↑↓</b> navigate</span>
       <span><b>↵</b> open</span>
@@ -1178,8 +1192,12 @@ function setDrop(open){
   drop.querySelector('button').setAttribute('aria-expanded', open);
 }
 drop.querySelector(':scope > button').addEventListener('click', e => { e.stopPropagation(); setDrop(!drop.classList.contains('open')); });
-drop.addEventListener('mouseenter', () => setDrop(true));
-drop.addEventListener('mouseleave', () => setDrop(false));
+/* hover-open only on real hover pointers: on touch, the synthesised
+   mouseenter fires before click and the click would toggle it shut again */
+if (matchMedia('(hover:hover) and (pointer:fine)').matches){
+  drop.addEventListener('mouseenter', () => setDrop(true));
+  drop.addEventListener('mouseleave', () => setDrop(false));
+}
 document.addEventListener('click', e => { if (!drop.contains(e.target)) setDrop(false); });
 
 /* ---------- collection tabs ---------- */
@@ -1263,8 +1281,35 @@ $('#sw-grid').innerHTML = PRODUCTS.map(p => `
 
 /* ---------- app switcher ---------- */
 const switcher = $('#switcher');
-function openSwitcher(){ switcher.classList.add('open'); switcher.setAttribute('aria-hidden','false'); }
-function closeSwitcher(){ switcher.classList.remove('open'); switcher.setAttribute('aria-hidden','true'); }
+/* Both overlays declare aria-modal, so they must actually take focus and hold it —
+   otherwise focus stays on a control behind the blurred veil and screen readers,
+   which ignore everything outside an aria-modal dialog, announce nothing. */
+function focusables(el){
+  return [...el.querySelectorAll('button, input, a[href], [tabindex]:not([tabindex="-1"])')]
+    .filter(e => e.offsetParent !== null);
+}
+function trapTab(el){
+  el.addEventListener('keydown', e => {
+    if (e.key !== 'Tab' || !el.classList.contains('open')) return;
+    const list = focusables(el);
+    if (!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+}
+trapTab(switcher);
+let lastOpener = null;
+function openSwitcher(){
+  lastOpener = document.activeElement;
+  switcher.classList.add('open'); switcher.setAttribute('aria-hidden','false');
+  setTimeout(() => { if (switcher.classList.contains('open')) (focusables(switcher)[0] || switcher).focus(); }, 40);
+}
+function closeSwitcher(){
+  const wasOpen = switcher.classList.contains('open');
+  switcher.classList.remove('open'); switcher.setAttribute('aria-hidden','true');
+  if (wasOpen && lastOpener && document.contains(lastOpener)) lastOpener.focus();
+}
 $$('[data-open-switcher]').forEach(b => b.addEventListener('click', openSwitcher));
 switcher.addEventListener('mousedown', e => { if (e.target === switcher) closeSwitcher(); });
 
@@ -1366,7 +1411,8 @@ function renderResults(){
     const accent = r.p ? r.p.accent : r.a.accent;
     const icon = r.p ? LOGO(r.p, 32) : ICONS[r.a.icon];
     html += `
-    <div class="pal-item ${i===sel?'sel':''}" data-i="${i}" style="--pi-c:${accent}">
+    <div class="pal-item ${i===sel?'sel':''}" data-i="${i}" style="--pi-c:${accent}"
+         role="option" id="pal-opt-${i}" aria-selected="${i===sel}">
       <span class="ic">${icon}</span>
       <span class="tx"><b>${r.title}</b><span>${r.sub}</span></span>
       <span class="go">↵ open</span>
@@ -1374,6 +1420,9 @@ function renderResults(){
   });
   list.innerHTML = html;
   list.querySelector('.pal-item.sel')?.scrollIntoView({ block:'nearest' });
+  input.setAttribute('aria-activedescendant', results.length ? 'pal-opt-' + sel : '');
+  const c = $('#pal-count');
+  if (c) c.textContent = results.length + (results.length === 1 ? ' result' : ' results');
 }
 
 function goResult(r){
@@ -1415,6 +1464,8 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowUp'){ e.preventDefault(); sel = Math.max(sel-1, 0); renderResults(); }
   else if (e.key === 'Enter' && results[sel]) goResult(results[sel]);
 });
+
+trapTab(veil);   /* bound here: `veil` is declared in this section, below the switcher */
 
 /* ============================================================
    ENTELLOQ ASSISTANT

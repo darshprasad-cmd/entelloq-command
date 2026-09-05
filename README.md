@@ -36,8 +36,7 @@ lockup banner and three product screenshots are embedded as base64. All ecosyste
 lives in a CONFIG block (`PRODUCTS`, `TOPICS`, `ACTIONS`, `STATS`, `UPDATES`); adding a
 product is one entry plus a screenshot.
 
-**Product URLs**: Quant is live at `quant.entelloq.com`; Physics and Biology point at
-their future subdomains — update when deployed.
+**Product URLs**: Quant, Physics and Biology are available at their respective `quant.entelloq.com`, `physics.entelloq.com` and `biology.entelloq.com` subdomains.
 
 ## Development
 
@@ -46,3 +45,7 @@ Open `index.html` in a browser. That's it.
 ---
 
 © 2026 Entelloq Networks. All rights reserved.
+
+### Connected product navigation
+
+`network.css` styles the three equal launch cards and responsive company homepage. The bottom-left Entelloq launcher includes all three apps and founder details. Run `node scripts/check-network.cjs` before publishing.

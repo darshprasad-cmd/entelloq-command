@@ -11,8 +11,10 @@ visitors to the right product in one click.
 
 ## Sections
 
-- **Hero** — "Building AI-powered learning and research ecosystems." with a
-  recognised-by bar (South Asian Herald, The Legal Lock).
+- **Hero** — "Understand a more complex world." over a cinematic Earth horizon,
+  with photographic Physics, Biology and Quant launch cards and actual product metrics.
+- **Guided tutorials** — links into the Physics hand-motion sandbox and Biology
+  hand-dissection walkthroughs, with navigation steps and camera requirements.
 - **Products** — Physics, Quant and Biology Entelloq as formal product cards with real
   interface screenshots, capability lists and one-click launch.
 - **Intelligent routing** — a global command palette (Ctrl K / ⌘K / `/`): *Projectile
@@ -27,20 +29,38 @@ visitors to the right product in one click.
 - **Newsroom** — latest updates across the ecosystem.
 - **Launch app** — nav button opens an application switcher; every product is one click
   away from anywhere.
-- **Light/dark** — light-first with a persisted dark toggle.
+- **Light/dark** — dark on first visit, with a persisted appearance toggle in the footer.
+  The cinematic launch scene remains dark in both appearances.
+- **Scroll motion** — subtle Earth and card-image parallax, section entrances and
+  reading progress. Respects reduced motion and a persisted pause control.
 
 ## Architecture
 
-One self-contained HTML file, no build step, no external assets — the real brand mark,
-lockup banner and three product screenshots are embedded as base64. All ecosystem data
-lives in a CONFIG block (`PRODUCTS`, `TOPICS`, `ACTIONS`, `STATS`, `UPDATES`); adding a
-product is one entry plus a screenshot.
+Static HTML with no build step. `index.html` retains the original product configuration,
+brand mark, founder portrait, banner and embedded interface screenshots. `network.css`
+provides the reference-led launch and responsive content styles; `launch-motion.js`
+adds optional native scroll effects without a framework. Four optimized WebP images in
+`assets/launch/` total about 535 KiB. Google Fonts supplies the typefaces with local fallbacks.
+Ecosystem data lives in `PRODUCTS`, `TOPICS`, `ACTIONS`, `PROOF` and `RESOURCES`.
 
 **Product URLs**: Quant, Physics and Biology are available at their respective `quant.entelloq.com`, `physics.entelloq.com` and `biology.entelloq.com` subdomains.
 
 ## Development
 
-Open `index.html` in a browser. That's it.
+Serve the folder over HTTP, for example `python -m http.server 8766`, then open
+`http://localhost:8766/`. Before publishing:
+
+```text
+node scripts/check-network.cjs
+node qa/reference-launch/preservation.cjs
+node --check launch-motion.js
+node qa/reference-launch/browser-check.cjs
+```
+
+The browser check needs Playwright and Chromium. It resolves `playwright` normally,
+or uses the module path in `PLAYWRIGHT_PATH`. Set `ENTELLOQ_QA_URL` to test another
+local or deployed URL. The preservation contract is pinned to the site before this
+redesign and checks copy, links, product data, founder assets and interaction hooks.
 
 ---
 
@@ -48,4 +68,6 @@ Open `index.html` in a browser. That's it.
 
 ### Connected product navigation
 
-`network.css` styles the three equal launch cards and responsive company homepage. The bottom-left Entelloq launcher includes all three apps and founder details. Run `node scripts/check-network.cjs` before publishing.
+The bottom-left Entelloq launcher includes all three apps and founder details. The
+header launch and login controls open the existing product chooser; sign-in remains
+inside each app. The search palette, assistant and all product tabs are preserved.

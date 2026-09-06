@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 <link rel="icon" id="favicon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="%23101216"/><circle cx="16" cy="16" r="11" stroke="%23AEB4C0" stroke-width="1.5" fill="none" opacity=".6" stroke-dasharray="52 17"/><circle cx="16" cy="16" r="3.4" fill="%23AEB4C0"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,450;1,9..144,400&family=Inter:wght@300;400;450;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,450;1,9..144,400&family=Inter:wght@400;450;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Entelloq Networks",
  "slogan":"One ecosystem. Infinite learning.",
@@ -698,12 +698,9 @@ footer{
   .reveal{ opacity:1; transform:none; }
 }
 </style>
-<link rel="preload" href="assets/launch/earth-horizon.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="network.css">
 </head>
 <body>
-<a class="skip-link" href="#products">Skip to products</a>
-<div class="reading-progress" aria-hidden="true"></div>
 
 <header class="nav">
   <a class="brand" href="#top" aria-label="Entelloq Networks home">
@@ -722,67 +719,28 @@ footer{
     <a href="#company">Company</a>
   </nav>
   <div class="nav-right">
-
+    <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">
+      <svg id="theme-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></svg>
+    </button>
     <button class="icon-btn" data-open-palette aria-label="Search (Ctrl K)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
     </button>
-    <button class="login-btn" data-open-switcher aria-label="Log in — choose your Entelloq app">Log in</button>
     <button class="launch-btn" data-open-switcher>
-      <span>Get Started</span>
+      <span>Get started</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </button>
   </div>
-  <p class="nav-motto">Same<br>curiosity.<br>A brighter<br>world.</p>
 </header>
 
 <main id="top">
   <!-- ============ HERO (headline → CTAs → product visual → trust strip) ============ -->
-  <section class="hero launch-scene" aria-labelledby="launch-title">
-    <div class="earth-scene" aria-hidden="true"><img class="earth-image" src="assets/launch/earth-horizon.webp" alt="" width="1536" height="1024" fetchpriority="high"><div class="earth-shade"></div></div>
-    <svg class="orbit-lines" viewBox="0 0 1536 1024" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M22 685C-8 544 855 587 1558 220"/><path d="M139 567C675 537 1112 741 1540 987"/></svg>
-    <div class="wrap launch-wrap">
-      <div class="launch-main">
-        <div class="launch-copy">
-          <p class="network-eyebrow">ENTELLOQ NETWORKS</p>
-          <h1 id="launch-title">Understand<br>A More Complex<br><em>World.</em></h1>
-          <p class="sub">Entelloq Networks builds AI-native learning experiences that make the world's most complex subjects intuitive, interactive, and real — starting with physics, biology, and quantitative thinking.</p>
-          <div class="hero-cta"><a class="btn primary" href="#products">Explore Our Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="watch-guide" href="#tutorials"><span class="play-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span>Explore the Guides<small>Two guided walkthroughs</small></span></a></div>
-        </div>
-        <div class="world-cards" aria-label="Explore the three Entelloq apps">
-        <a class="world-card world-physics" href="https://physics.entelloq.com" aria-label="Open Physics Entelloq">
-          <img class="world-image" src="assets/launch/physics-black-hole.webp" alt="" width="1024" height="1536" fetchpriority="high">
-          <span class="world-number">01</span><span class="world-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="world-copy"><h2>Physics<br>Entelloq</h2><p>See. Simulate. Understand.</p><span class="world-line" aria-hidden="true"></span></div>
-        </a>
-        <a class="world-card world-biology" href="https://biology.entelloq.com" aria-label="Open Biology Entelloq">
-          <img class="world-image" src="assets/launch/biology-dna.webp" alt="" width="1024" height="1536" fetchpriority="high">
-          <span class="world-number">02</span><span class="world-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="world-copy"><h2>Biology<br>Entelloq</h2><p>Explore Life, Layer by Layer.</p><span class="world-line" aria-hidden="true"></span></div>
-        </a>
-        <a class="world-card world-quant" href="https://quant.entelloq.com" aria-label="Open Quant Entelloq">
-          <img class="world-image" src="assets/launch/quant-landscape.webp" alt="" width="1024" height="1536" fetchpriority="high">
-          <span class="world-number">03</span><span class="world-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <div class="world-copy"><h2>Quant<br>Entelloq</h2><p>Think Deeper. Trade Smarter.</p><span class="world-line" aria-hidden="true"></span></div>
-        </a>
-        </div>
-      </div>
-      <div class="launch-mission">
-        <div><span class="mission-eyebrow">Built for a more curious tomorrow</span><h2>Better Learning<br>Builds a Brighter Tomorrow.</h2></div>
-        <p>We believe that deeper understanding leads to better questions, better decisions, and a more thoughtful world. Entelloq Networks exists to make that understanding accessible to everyone.</p>
-        <div class="mission-note"><p>One ecosystem.<br>Infinite learning.</p><a href="#company">Intelligence. Innovation. Impact.</a></div>
-      </div>
-      <div class="launch-bottom">
-        <div class="launch-stats" aria-label="Entelloq at a glance">
-          <a href="#products"><strong>3</strong><span>Products</span><small>and growing</small></a>
-          <a href="#proof"><strong>700+</strong><span>Registered learners</span><small>on Quant since July 2026</small></a>
-          <a href="#proof"><strong>21+</strong><span>Physics simulations</span><small>in the Ultimate release</small></a>
-          <a href="#proof"><strong>89+</strong><span>Mapped concepts</span><small>in a living physics graph</small></a>
-        </div>
-        <a class="scroll-cue" href="#products">Scroll to explore<span aria-hidden="true"><i></i></span></a>
-      </div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="network-eyebrow">ENTELLOQ NETWORKS / THREE CONNECTED WORLDS</div><h1>Go beyond knowing.<br><em>Start understanding.</em></h1>
+      <p class="sub">Explore the laws of physics, the patterns of markets and the systems of life. Three interactive apps, built around your curiosity.</p>
+      <div class="hero-cta"><a class="btn primary" href="#products">Explore the three apps <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#leadership">Meet the founder</a></div>
+      <img id="hero-shot" src="data:," alt="" hidden><div class="network-caption"><span>ONE NETWORK. THREE WAYS TO EXPLORE.</span><span>Choose where your curiosity takes you.</span></div><div class="network-apps"><a class="network-app network-physics" href="https://physics.entelloq.com"><div class="network-app-top"><span>01 / PHYSICS</span><span aria-hidden="true">↗</span></div><svg class="network-art" viewBox="0 0 320 160" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="160" cy="80" rx="105" ry="35" transform="rotate(-25 160 80)"/><ellipse cx="160" cy="80" rx="75" ry="55" transform="rotate(35 160 80)"/><circle cx="160" cy="80" r="18"/><circle cx="250" cy="40" r="5"/></svg><h3>Physics <span>Entelloq</span></h3><b>Make the invisible tangible.</b><p>Experiment with motion, forces and waves. Build intuition by changing the model.</p><span class="network-open">Open Physics <span aria-hidden="true">↗</span></span></a><a class="network-app network-quant" href="https://quant.entelloq.com"><div class="network-app-top"><span>02 / QUANT</span><span aria-hidden="true">↗</span></div><svg class="network-art" viewBox="0 0 320 160" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M35 120H285M35 120V25M45 105L80 85 115 96 155 55 190 68 225 35 280 20"/><path d="M70 60V100M130 45V85M195 35V85M250 15V55"/></svg><h3>Quant <span>Entelloq</span></h3><b>Understand the decision.</b><p>Explore markets, practise with virtual capital and investigate the ideas behind a trade.</p><span class="network-open">Open Quant <span aria-hidden="true">↗</span></span></a><a class="network-app network-biology" href="https://biology.entelloq.com"><div class="network-app-top"><span>03 / BIOLOGY</span><span aria-hidden="true">↗</span></div><svg class="network-art" viewBox="0 0 320 160" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M95 15C245 45 75 110 225 145M225 15C75 45 245 110 95 145M112 30H208M129 50H191M129 110H191M112 130H208M145 70H175M145 90H175"/></svg><h3>Biology <span>Entelloq</span></h3><b>Discover how life works.</b><p>Investigate living systems through interactive lessons, virtual labs and dissection.</p><span class="network-open">Open Biology <span aria-hidden="true">↗</span></span></a></div>
     </div>
-    <img id="hero-shot" src="data:," alt="" hidden>
-  </section>
     <div class="hero-base">
       <div class="wrap trust">
         <span class="lbl">Recognised by</span>
@@ -790,7 +748,7 @@ footer{
         <a class="lock" href="https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/" target="_blank" rel="noopener">THE LEGAL LOCK <span>· Journals LLP</span></a>
       </div>
     </div>
-
+  </section>
 
   <!-- ============ COLLECTION TABS ============ -->
   <section class="section" id="products">
@@ -799,12 +757,6 @@ footer{
         <span class="kicker">Products</span>
         <h2 class="h2">Find your next field of discovery</h2>
         <p>Explore the tools inside each app, then step straight into your next experiment.</p>
-      </div>
-<div class="discovery-intro"><p>Explore the laws of physics, the patterns of markets and the systems of life. Three interactive apps, built around your curiosity.</p><span>Go beyond knowing.<br><em>Start understanding.</em></span></div>
-      <div class="discovery-notes">
-        <a href="https://physics.entelloq.com"><span>01 / PHYSICS</span><h3>Make the invisible tangible.</h3><p>Experiment with motion, forces and waves. Build intuition by changing the model.</p><b>Open Physics ↗</b></a>
-        <a href="https://biology.entelloq.com"><span>02 / BIOLOGY</span><h3>Discover how life works.</h3><p>Investigate living systems through interactive lessons, virtual labs and dissection.</p><b>Open Biology ↗</b></a>
-        <a href="https://quant.entelloq.com"><span>03 / QUANT</span><h3>Understand the decision.</h3><p>Explore markets, practise with virtual capital and investigate the ideas behind a trade.</p><b>Open Quant ↗</b></a>
       </div>
       <div class="tabbar" role="tablist" aria-label="Entelloq products" id="tabbar"></div>
       <div id="panels"></div>
@@ -1016,9 +968,6 @@ footer{
         <a href="https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/" target="_blank" rel="noopener">Press</a>
       </div>
     </div>
-    <div class="appearance-controls">    <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">
-      <svg id="theme-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></svg>
-    </button><span>Light / dark appearance</span><button id="motion-toggle" aria-pressed="false">Pause motion</button></div>
     <div class="foot-base">
       <span>© 2026 Entelloq Networks. All rights reserved.</span>
       <span>Entelloq — pronounced en-TELL-ock</span>
@@ -1212,16 +1161,13 @@ $$('img[data-mark]').forEach(i => i.src = MARK_SRC);
 const root = document.documentElement;
 function setTheme(t){
   root.dataset.theme = t;
-  try { localStorage.setItem('eq_theme', t); } catch (_) {}
-  $('#theme-btn').setAttribute('aria-label', t === 'dark' ? 'Switch to light appearance' : 'Switch to dark appearance');
+  localStorage.setItem('eq_theme', t);
   $('#theme-ic').innerHTML = t === 'dark'
     ? '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/>'
     : '<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>';
   document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#08090B' : '#FFFFFF';
 }
-let savedTheme;
-try { savedTheme = localStorage.getItem('eq_theme'); } catch (_) {}
-setTheme(savedTheme === 'light' ? 'light' : 'dark');
+setTheme(localStorage.getItem('eq_theme') || 'light');
 $('#theme-btn').addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
 /* ---------- hero visual (live product, from config) ---------- */
@@ -1304,7 +1250,6 @@ const statIO = new IntersectionObserver(es => es.forEach(e => {
   const el = e.target, n = +el.dataset.n, dec = Number.isInteger(n) ? 0 : 1;
   const t0 = performance.now(), dur = reduced ? 1 : 1100;
   (function tick(t){
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches || document.body.classList.contains('motion-paused')) { el.textContent = n.toFixed(dec); return; }
     const k = Math.min(1, (t - t0)/dur);
     el.textContent = (n * (1-Math.pow(1-k,3))).toFixed(dec);
     if (k < 1) requestAnimationFrame(tick);
@@ -2017,6 +1962,5 @@ agPanel.addEventListener('keydown', e => {
 </script>
 
 <!-- ENTELLOQ-ECOSYSTEM-SWITCHER:END -->
-<script src="launch-motion.js" defer></script>
 </body>
 </html>

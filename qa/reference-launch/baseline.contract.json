@@ -1,0 +1,1010 @@
+{
+  "baselineCommit": "2ca3670",
+  "sourceSha256": "123025263c6c52a792b9dfeef7994bab82fcdebd8b00eec9890092429dde348e",
+  "sectionCopy": {
+    "products": [
+      "Explore the tools inside each app, then step straight into your next experiment."
+    ],
+    "tutorials": [
+      "Follow the actual controls, from finding the feature to your first interaction. Go at your pace and replay whenever you need.",
+      "Put your hands into the experiment.",
+      "Explore → Sandbox → Hands. Learn to grab, move and release objects, then switch the camera off.",
+      "Find your way around the lab.",
+      "Dissection Lab → instrument tray → Use my hands. Learn to aim, pinch and follow the first objective.",
+      "Guides work without a camera. Biology hand tracking requires a desktop webcam; mouse and touch controls are available."
+    ],
+    "newsroom": [],
+    "platform": [
+      "Every product is engineered around the same conviction — that confidence, not content, is what most learners are missing.",
+      "Use the Entelloq logo at the bottom left of any app to open Physics, Quant or Biology, or return here.",
+      "Assistance designed to rebuild belief and intuition — never to think in the learner's place.",
+      "Early versions of every Entelloq product are available free of charge — understanding should not depend on resources."
+    ],
+    "proof": [
+      "Quant Entelloq launched in July 2026. The numbers below are real, and updated as the network grows."
+    ],
+    "leadership": [
+      "Darsh Prasad founded Entelloq Networks after observing, first in physics classrooms and later in financial markets, that the people who struggle to learn are rarely the least capable — more often, they are the ones who have quietly stopped believing they could understand . Existing platforms address isolated stages of learning; Entelloq is built for what happens between them.",
+      "He designs and engineers every Entelloq product end-to-end — the physics simulation engine, the market-practice environment and the biology atlas — as one connected platform rather than a collection of separate tools.",
+      "“Technology achieves its highest purpose not when it thinks for people, but when it gives people the confidence to think for themselves.” Darsh Prasad — South Asian Herald, July 2026"
+    ],
+    "company": [
+      "Entelloq — pronounced en-TELL-ock.",
+      "Mission",
+      "Intelligence. Innovation. Impact. To take learners from “I don’t understand this” to “I finally get it” — by pairing rigorous content with AI that restores confidence rather than replacing effort.",
+      "Vision",
+      "An environment rather than a tool: a connected platform of specialised learning worlds, where every discipline receives a complete product and understanding does not depend on where someone starts.",
+      "The name",
+      "EN — intelligent communication. TEL — expanding learning. LOQ — expanding options in trading, with quantitative precision. The name carries the mission: en-TELL-ock .",
+      "Milestones",
+      "The company’s first product opens to the public, free of charge.",
+      "21+ live simulations and 89+ mapped concepts across six explanatory lenses.",
+      "National press coverage of the platform and its founding story.",
+      "The dissection laboratory, Explore atlas and Biology Universe come together.",
+      "Recognised for innovation in physics and science education.",
+      "Within weeks of launch, the platform serves 700+ registered learners."
+    ]
+  },
+  "landmarkText": [
+    "ENTELLOQ One ecosystem. Infinite learning. Intelligence · Innovation · Impact. Products Company Newsroom Leadership About Momentum Connect LinkedIn X Instagram GitHub Contact Press © 2026 Entelloq Networks. All rights reserved. Entelloq — pronounced en-TELL-ock"
+  ],
+  "destinations": [
+    "#company",
+    "#leadership",
+    "#newsroom",
+    "#products",
+    "#proof",
+    "#top",
+    "#tutorials",
+    "https://biology.entelloq.com",
+    "https://biology.entelloq.com/app.html?tutorial=dissection",
+    "https://entelloq.com",
+    "https://entelloq.com/",
+    "https://entelloq.com/#leadership",
+    "https://fonts.gstatic.com",
+    "https://github.com/darshprasad-cmd",
+    "https://physics.entelloq.com",
+    "https://physics.entelloq.com/?tutorial=hands",
+    "https://quant.entelloq.com",
+    "https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/",
+    "https://www.instagram.com/entelloq/",
+    "https://www.linkedin.com/in/entelloq-networks",
+    "https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/",
+    "https://x.com/Entelloqnetwork",
+    "mailto:entelloqnetworks@gmail.com",
+    "network.css"
+  ],
+  "contractIds": [
+    "prod-drop",
+    "drop-panel",
+    "theme-btn",
+    "theme-ic",
+    "tabbar",
+    "panels",
+    "res-grid",
+    "proof-grid",
+    "foot-products",
+    "switcher",
+    "sw-grid",
+    "veil",
+    "pal-input",
+    "pal-list",
+    "pal-count",
+    "lift",
+    "lift-icon",
+    "lift-name",
+    "lift-url",
+    "ag-fab",
+    "ag-panel",
+    "ag-close",
+    "ag-log",
+    "ag-chips",
+    "ag-form",
+    "ag-input",
+    "eqx-fab",
+    "eqx-panel",
+    "eqx-close",
+    "eqx-list"
+  ],
+  "founderPortraitSha256": "f94a6e00b1292f60187a1f48c863a8e11cee170a687bad669c5171ef74c915db",
+  "companyBannerSha256": "7e0695c6b87daec56a160fe4784dd6dda2129d02051cb4e670f50bbd9ddc2974",
+  "data": {
+    "PRODUCTS": [
+      {
+        "id": "quant",
+        "name": "Quant Entelloq",
+        "short": "Quant",
+        "status": "live",
+        "statusLabel": "Live",
+        "url": "https://quant.entelloq.com",
+        "panelTitle": "Practise markets with zero capital at risk",
+        "logoToken": {
+          "sha256": "9563de709c657170cda1ad26f2a75652040dd596c2f937882f7c7fbcef6897f8"
+        },
+        "creed": "Analyze · Model · Outperform",
+        "desc": "Practical quantitative finance education — virtual capital at real market prices, with an AI coach that reviews every decision against live data, news and position size.",
+        "includes": [
+          "Market simulator",
+          "AI trade coach",
+          "Plain-English lessons",
+          "Live market data"
+        ],
+        "shotToken": {
+          "sha256": "7492a5a77286bc9a938fddf3db8f44a4470c5eab5510a5399e9dd12e509d462b"
+        },
+        "keywords": [
+          "quant",
+          "finance",
+          "options",
+          "option pricing",
+          "options pricing",
+          "black scholes",
+          "black-scholes",
+          "trading",
+          "trade",
+          "markets",
+          "market simulator",
+          "portfolio",
+          "derivatives",
+          "stochastic",
+          "greeks",
+          "monte carlo",
+          "capm",
+          "bonds",
+          "equities",
+          "volatility",
+          "investing",
+          "stocks",
+          "paper trading"
+        ]
+      },
+      {
+        "id": "physics",
+        "name": "Physics Entelloq",
+        "short": "Physics",
+        "status": "beta",
+        "statusLabel": "Early access",
+        "url": "https://physics.entelloq.com",
+        "panelTitle": "Rebuild physical intuition, systematically",
+        "logoToken": {
+          "sha256": "bc34ba86755d6d9b0862b3ee2cf0dc578a2260ad8022e79cdaa5f47cb22c6d54"
+        },
+        "creed": "Explore · Understand · Discover",
+        "desc": "An AI-native platform for physics mastery — live simulations, a living concept graph, and six explanatory lenses per concept. Built for JEE, NEET, AP, A-Levels, IB and Olympiad.",
+        "includes": [
+          "Live simulations",
+          "Concept graph",
+          "Specialist AI minds",
+          "Six lenses"
+        ],
+        "shotToken": {
+          "sha256": "11812e65963083cd5350f2ece481ef7e49a3755dbc1eb0de218caa2439cbc21a"
+        },
+        "keywords": [
+          "physics",
+          "mechanics",
+          "projectile",
+          "motion",
+          "kinematics",
+          "quantum",
+          "relativity",
+          "waves",
+          "optics",
+          "electromagnetism",
+          "thermodynamics",
+          "gravity",
+          "black hole",
+          "newton",
+          "laws",
+          "forces",
+          "energy",
+          "momentum",
+          "calculus",
+          "simulation",
+          "simulations",
+          "olympiad",
+          "jee",
+          "neet"
+        ]
+      },
+      {
+        "id": "biology",
+        "name": "Biology Entelloq",
+        "short": "Biology",
+        "status": "live",
+        "statusLabel": "Open access",
+        "url": "https://biology.entelloq.com",
+        "panelTitle": "Explore the living world, interactively",
+        "logoToken": {
+          "sha256": "5f5dd41f9667678cad1d0e8c3e4ee6fe2747cd6713c7c977e8cf9b1289d18708"
+        },
+        "creed": "Discover Life · Understand · Advance Tomorrow",
+        "desc": "An interactive reference for the living world — the tree of life, human body systems, four billion years of evolution, and a gesture-controlled dissection laboratory.",
+        "includes": [
+          "Dissection lab",
+          "Tree-of-life atlas",
+          "Body systems",
+          "Biology Universe"
+        ],
+        "shotToken": {
+          "sha256": "f78b99c52a11f66038f049f62422bbe12fff7e004255e06bd9687d9ac942ee04"
+        },
+        "keywords": [
+          "biology",
+          "bio",
+          "cell",
+          "dna",
+          "genome",
+          "genetics",
+          "anatomy",
+          "dissection",
+          "evolution",
+          "microscope",
+          "organism",
+          "ecology",
+          "life",
+          "tree of life",
+          "disease",
+          "body"
+        ]
+      }
+    ],
+    "TOPICS": [
+      [
+        "Projectile Motion",
+        "physics"
+      ],
+      [
+        "Newton’s Laws",
+        "physics"
+      ],
+      [
+        "Quantum Mechanics",
+        "physics"
+      ],
+      [
+        "Black Holes",
+        "physics"
+      ],
+      [
+        "Electromagnetism",
+        "physics"
+      ],
+      [
+        "Orbital Mechanics",
+        "physics"
+      ],
+      [
+        "Black-Scholes Model",
+        "quant"
+      ],
+      [
+        "CAPM",
+        "quant"
+      ],
+      [
+        "Options & the Greeks",
+        "quant"
+      ],
+      [
+        "Market Simulator",
+        "quant"
+      ],
+      [
+        "Portfolio Theory",
+        "quant"
+      ],
+      [
+        "DNA & Genetics",
+        "biology"
+      ],
+      [
+        "Genome",
+        "biology"
+      ],
+      [
+        "Virtual Dissection",
+        "biology"
+      ],
+      [
+        "Tree of Life",
+        "biology"
+      ],
+      [
+        "Human Body Systems",
+        "biology"
+      ]
+    ],
+    "ACTIONS": [
+      {
+        "title": "South Asian Herald feature",
+        "sub": "Press · July 30, 2026",
+        "ext": "https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/",
+        "keywords": [
+          "press",
+          "article",
+          "herald",
+          "south asian herald",
+          "news",
+          "feature",
+          "coverage"
+        ]
+      },
+      {
+        "title": "The Legal Lock recognition",
+        "sub": "Recognition · August 2026",
+        "ext": "https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/",
+        "keywords": [
+          "legal lock",
+          "recognition",
+          "award",
+          "linkedin",
+          "announcement"
+        ]
+      },
+      {
+        "title": "Leadership",
+        "sub": "Darsh Prasad — Founder, Entelloq Networks",
+        "anchor": "#leadership",
+        "keywords": [
+          "founder",
+          "darsh",
+          "prasad",
+          "leadership",
+          "team",
+          "who"
+        ]
+      },
+      {
+        "title": "About the company",
+        "sub": "Mission, vision and milestones",
+        "anchor": "#company",
+        "keywords": [
+          "about",
+          "company",
+          "mission",
+          "vision",
+          "milestones",
+          "history"
+        ]
+      }
+    ],
+    "RESOURCES": [
+      {
+        "lbl": "MILESTONE",
+        "t": "Quant Entelloq passes 700 registered users",
+        "p": "Within weeks of its July launch, the market-practice platform serves more than 700 learners.",
+        "link": "See the numbers",
+        "anchor": "#proof"
+      },
+      {
+        "lbl": "PRESS",
+        "t": "“The Platform That Doesn’t Just Teach — It Helps You Finally Understand”",
+        "p": "The South Asian Herald features Entelloq Networks and its founding story. By Vivek Das.",
+        "link": "Read the feature",
+        "ext": "https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/"
+      },
+      {
+        "lbl": "RECOGNITION",
+        "t": "The Legal Lock recognises Entelloq Networks",
+        "p": "Founder Darsh Prasad recognised for contributions to physics and science education innovation.",
+        "link": "View the announcement",
+        "ext": "https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/"
+      },
+      {
+        "lbl": "RELEASE",
+        "t": "Physics Entelloq “Ultimate” ships",
+        "p": "21+ live simulations and 89+ mapped concepts across six explanatory lenses.",
+        "link": "Explore Physics Entelloq",
+        "launch": "physics"
+      },
+      {
+        "lbl": "BETA",
+        "t": "Explore Biology Entelloq",
+        "p": "The dissection laboratory, Explore atlas and Biology Universe come together as one product.",
+        "link": "Explore Biology Entelloq",
+        "launch": "biology"
+      },
+      {
+        "lbl": "LAUNCH",
+        "t": "Quant Entelloq opens to the public",
+        "p": "The company’s first product launches in July 2026, free of charge.",
+        "link": "Open Quant Entelloq",
+        "launch": "quant"
+      }
+    ],
+    "PROOF": [
+      {
+        "n": 700,
+        "suffix": "+",
+        "p": "registered users on Quant Entelloq since July 2026",
+        "link": "Open Quant",
+        "launch": "quant"
+      },
+      {
+        "n": 21,
+        "suffix": "+",
+        "p": "live physics simulations in the Ultimate release",
+        "link": "Explore Physics",
+        "launch": "physics"
+      },
+      {
+        "n": 89,
+        "suffix": "+",
+        "p": "physics concepts mapped in a living graph",
+        "link": "Explore Physics",
+        "launch": "physics"
+      },
+      {
+        "n": 3.8,
+        "suffix": " Gyr",
+        "p": "of evolutionary history mapped in Biology Entelloq",
+        "link": "Explore Biology",
+        "launch": "biology"
+      },
+      {
+        "n": 6,
+        "suffix": "",
+        "p": "explanatory lenses on every physics concept",
+        "link": "Explore Physics",
+        "launch": "physics"
+      },
+      {
+        "n": 50,
+        "suffix": "+",
+        "p": "news sources reviewed by the AI trade coach",
+        "link": "Open Quant",
+        "launch": "quant"
+      }
+    ],
+    "assistant": [
+      {
+        "id": "greet",
+        "keywords": [
+          "hi",
+          "hello",
+          "hey",
+          "good morning",
+          "good evening",
+          "yo",
+          "namaste",
+          "greetings"
+        ],
+        "response": {
+          "html": "Hello. I can explain what Entelloq builds, help you work out which product\n      fits what you want to learn, and open it for you.",
+          "chips": [
+            "Which product is right for me?",
+            "What is Entelloq?",
+            "Is it free?"
+          ]
+        }
+      },
+      {
+        "id": "what",
+        "keywords": [
+          "what is entelloq",
+          "about entelloq",
+          "about the company",
+          "who are you",
+          "what do you do",
+          "teach",
+          "what do you teach",
+          "tell me about entelloq",
+          "what does entelloq do",
+          "company",
+          "overview",
+          "ecosystem",
+          "explain entelloq"
+        ],
+        "response": {
+          "html": "Entelloq Networks builds AI-powered learning ecosystems. Right now that's three\n      connected platforms — <b>Quant</b> (markets), <b>Physics</b>, and <b>Biology</b> — built on one\n      conviction: people who struggle to learn usually haven't run out of ability, they've\n      <em>stopped believing they could understand</em>. Every product is designed to rebuild that belief.",
+          "acts": [
+            {
+              "anchor": "#company",
+              "label": "Read our mission and milestones"
+            }
+          ],
+          "chips": [
+            "Which product is right for me?",
+            "Who founded Entelloq?",
+            "How is the name pronounced?"
+          ]
+        }
+      },
+      {
+        "id": "choose",
+        "keywords": [
+          "which product",
+          "recommend",
+          "right for me",
+          "help me choose",
+          "what should i use",
+          "suggest",
+          "not sure",
+          "which one",
+          "where do i start",
+          "which app",
+          "choose",
+          "best for me"
+        ],
+        "response": {
+          "html": "Happy to help — it comes down to what you want to understand:\n      <ul><li><b>Markets, trading, investing</b> → Quant Entelloq (live now)</li>\n      <li><b>Physics, exams, simulations</b> → Physics Entelloq (early access)</li>\n      <li><b>Life sciences, anatomy, evolution</b> → Biology Entelloq (private beta)</li></ul>\n      Which sounds closest?",
+          "chips": [
+            "Markets and trading",
+            "Physics and exams",
+            "Life sciences",
+            "I want all three"
+          ]
+        }
+      },
+      {
+        "id": "all",
+        "keywords": [
+          "all three",
+          "everything",
+          "all of them",
+          "all products",
+          "both"
+        ],
+        "response": {
+          "html": "Sensible — they're built to connect. <b>Quant</b> is live today, so it's the\n      easiest place to start; <b>Physics</b> is in open early access; <b>Biology</b> is still private beta.\n      All of them are free right now.",
+          "acts": [
+            {
+              "p": "quant"
+            },
+            {
+              "p": "physics"
+            },
+            {
+              "p": "biology"
+            }
+          ],
+          "chips": [
+            "Is it free?",
+            "What’s new?"
+          ]
+        }
+      },
+      {
+        "id": "exams",
+        "keywords": [
+          "jee",
+          "neet",
+          "boards",
+          "board exam",
+          "exam",
+          "exams",
+          "olympiad",
+          "iit",
+          "competitive",
+          "a-levels",
+          "a levels",
+          "ib",
+          "ap",
+          "entrance",
+          "school",
+          "college",
+          "student",
+          "syllabus"
+        ],
+        "response": {
+          "html": "<b>Physics Entelloq</b> is engineered for exactly that — it's built around\n      JEE, NEET, AP, A-Levels, IB and Olympiad, with 21+ live simulations and 89+ mapped concepts,\n      each explained through six lenses so a concept that didn't land one way can land another.\n      If you're sitting NEET, <b>Biology Entelloq</b> covers the other half.",
+          "acts": [
+            {
+              "p": "physics"
+            },
+            {
+              "p": "biology",
+              "label": "Also open Biology Entelloq"
+            }
+          ],
+          "chips": [
+            "Is it free?",
+            "Tell me about Physics"
+          ]
+        }
+      },
+      {
+        "id": "quant",
+        "keywords": [
+          "quant",
+          "finance",
+          "options",
+          "option pricing",
+          "options pricing",
+          "black scholes",
+          "black-scholes",
+          "trading",
+          "trade",
+          "markets",
+          "market simulator",
+          "portfolio",
+          "derivatives",
+          "stochastic",
+          "greeks",
+          "monte carlo",
+          "capm",
+          "bonds",
+          "equities",
+          "volatility",
+          "investing",
+          "stocks",
+          "paper trading",
+          "markets and trading",
+          "money",
+          "invest",
+          "investing",
+          "finance career",
+          "stock"
+        ],
+        "response": {
+          "html": "<b>Quant Entelloq</b> is our live product — practical quantitative finance.\n      You practise with virtual capital at <em>real market prices</em>, and an AI coach reviews\n      every decision before you commit to it.\n      <ul><li>700+ registered users since July 2026</li><li>Zero real capital at risk</li>\n      <li>50+ news sources feeding the coach</li><li>20 plain-English lessons</li></ul>",
+          "acts": [
+            {
+              "p": "quant"
+            }
+          ],
+          "chips": [
+            "Is it free?",
+            "Tell me about Physics",
+            "Who founded Entelloq?"
+          ]
+        }
+      },
+      {
+        "id": "physics",
+        "keywords": [
+          "physics",
+          "mechanics",
+          "projectile",
+          "motion",
+          "kinematics",
+          "quantum",
+          "relativity",
+          "waves",
+          "optics",
+          "electromagnetism",
+          "thermodynamics",
+          "gravity",
+          "black hole",
+          "newton",
+          "laws",
+          "forces",
+          "energy",
+          "momentum",
+          "calculus",
+          "simulation",
+          "simulations",
+          "olympiad",
+          "jee",
+          "neet",
+          "physics and exams",
+          "simulation",
+          "concept graph"
+        ],
+        "response": {
+          "html": "<b>Physics Entelloq</b> rebuilds physical intuition rather than drilling formulas.\n      Every concept is shown through six explanatory lenses, wired into a living concept graph.\n      <ul><li>21+ live, tweakable simulations</li><li>89+ concepts mapped</li>\n      <li>Built for JEE, NEET, AP, A-Levels, IB and Olympiad</li></ul>\n      It's in early access and free.",
+          "acts": [
+            {
+              "p": "physics"
+            }
+          ],
+          "chips": [
+            "I’m preparing for JEE",
+            "Tell me about Biology",
+            "Is it free?"
+          ]
+        }
+      },
+      {
+        "id": "biology",
+        "keywords": [
+          "biology",
+          "bio",
+          "cell",
+          "dna",
+          "genome",
+          "genetics",
+          "anatomy",
+          "dissection",
+          "evolution",
+          "microscope",
+          "organism",
+          "ecology",
+          "life",
+          "tree of life",
+          "disease",
+          "body",
+          "life sciences",
+          "medical",
+          "doctor",
+          "mbbs",
+          "species"
+        ],
+        "response": {
+          "html": "<b>Biology Entelloq</b> is an interactive reference for the living world — currently\n      in private beta.\n      <ul><li>A gesture-controlled dissection laboratory</li><li>The tree of life and ~3.8 billion\n      years of evolution</li><li>Ten body systems and a growing disease library</li></ul>",
+          "acts": [
+            {
+              "p": "biology"
+            }
+          ],
+          "chips": [
+            "Tell me about Physics",
+            "Is it free?",
+            "How do I get started?"
+          ]
+        }
+      },
+      {
+        "id": "price",
+        "keywords": [
+          "free",
+          "price",
+          "pricing",
+          "cost",
+          "how much",
+          "subscription",
+          "pay",
+          "payment",
+          "money to use",
+          "trial",
+          "plan",
+          "plans",
+          "charge",
+          "expensive",
+          "premium"
+        ],
+        "response": {
+          "html": "Every Entelloq product is <b>free in early access</b> — no card, no trial clock.\n      That's deliberate: the founding belief is that understanding shouldn't depend on the school\n      you attend or the resources you were born into.",
+          "acts": [
+            {
+              "p": "quant",
+              "label": "Start free with Quant Entelloq"
+            }
+          ],
+          "chips": [
+            "Which product is right for me?",
+            "How do I get started?"
+          ]
+        }
+      },
+      {
+        "id": "founder",
+        "keywords": [
+          "founder",
+          "darsh",
+          "prasad",
+          "who built",
+          "who made",
+          "team",
+          "ceo",
+          "leadership",
+          "owner",
+          "who runs",
+          "creator",
+          "behind"
+        ],
+        "response": {
+          "html": "Entelloq Networks was founded by <b>Darsh Prasad</b>, who designs and engineers\n      every product end-to-end. The idea started in physics classrooms — he noticed the students who\n      struggled weren't the least capable, they were the ones who'd quietly stopped believing they\n      could understand — and he saw the same pattern again in financial markets.",
+          "acts": [
+            {
+              "anchor": "#leadership",
+              "label": "Read the founder’s story"
+            },
+            {
+              "ext": "https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/",
+              "label": "The South Asian Herald feature"
+            }
+          ],
+          "chips": [
+            "What is Entelloq?",
+            "Recognition and press"
+          ]
+        }
+      },
+      {
+        "id": "press",
+        "keywords": [
+          "press",
+          "news",
+          "media",
+          "herald",
+          "south asian",
+          "legal lock",
+          "recognition",
+          "award",
+          "coverage",
+          "article",
+          "featured",
+          "published",
+          "journal"
+        ],
+        "response": {
+          "html": "Two so far. The <b>South Asian Herald</b> ran a feature on 30 July 2026 by Vivek Das —\n      “The Platform That Doesn't Just Teach — It Helps You Finally Understand”. In August 2026,\n      <b>The Legal Lock</b> recognised the founder for innovation in physics and science education.",
+          "acts": [
+            {
+              "ext": "https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/",
+              "label": "Read the Herald feature"
+            },
+            {
+              "ext": "https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/",
+              "label": "The Legal Lock recognition"
+            }
+          ],
+          "chips": [
+            "Who founded Entelloq?",
+            "What’s new?"
+          ]
+        }
+      },
+      {
+        "id": "name",
+        "keywords": [
+          "pronounce",
+          "pronounced",
+          "pronunciation",
+          "say the name",
+          "name mean",
+          "what does entelloq mean",
+          "meaning",
+          "entelloq mean",
+          "how do you say"
+        ],
+        "response": {
+          "html": "It's <b>en-TELL-ock</b> — EN · TEL · LOQ. The syllables carry the mission:\n      <b>EN</b> for intelligent communication, <b>TEL</b> for expanding learning, and <b>LOQ</b> for\n      expanding options in trading, with quantitative precision.",
+          "chips": [
+            "What is Entelloq?",
+            "Which product is right for me?"
+          ]
+        }
+      },
+      {
+        "id": "start",
+        "keywords": [
+          "get started",
+          "getting started",
+          "sign up",
+          "signup",
+          "register",
+          "create account",
+          "account",
+          "log in",
+          "login",
+          "how do i start",
+          "begin",
+          "join",
+          "onboard",
+          "install",
+          "download"
+        ],
+        "response": {
+          "html": "Pick a product and you're in — accounts are free and there's nothing to install,\n      everything runs in the browser. <b>Quant</b> is the most complete today.",
+          "acts": [
+            {
+              "p": "quant"
+            },
+            {
+              "p": "physics"
+            }
+          ],
+          "chips": [
+            "Is it free?",
+            "Which product is right for me?"
+          ]
+        }
+      },
+      {
+        "id": "new",
+        "keywords": [
+          "what’s new",
+          "whats new",
+          "new",
+          "latest",
+          "updates",
+          "update",
+          "changelog",
+          "recent",
+          "roadmap",
+          "coming",
+          "release",
+          "shipped"
+        ],
+        "response": {
+          "html": "The most recent milestones: Quant Entelloq passed <b>700 registered users</b>,\n      The Legal Lock recognised the company, and Biology Entelloq expanded its private beta —\n      all in August 2026.",
+          "acts": [
+            {
+              "anchor": "#newsroom",
+              "label": "See the full newsroom"
+            }
+          ],
+          "chips": [
+            "Recognition and press",
+            "Which product is right for me?"
+          ]
+        }
+      },
+      {
+        "id": "contact",
+        "keywords": [
+          "contact",
+          "email",
+          "support",
+          "reach",
+          "talk to",
+          "get in touch",
+          "partnership",
+          "partner",
+          "invest",
+          "invest in",
+          "investor",
+          "investors",
+          "funding",
+          "press enquiry",
+          "collaborate",
+          "hire",
+          "job",
+          "career",
+          "careers",
+          "work with",
+          "help me"
+        ],
+        "response": {
+          "html": "The best route is straight to our inbox — <b>entelloqnetworks@gmail.com</b>.\n      Partnerships, press and product feedback all land in the same place.",
+          "acts": [
+            {
+              "ext": "mailto:entelloqnetworks@gmail.com",
+              "label": "Email Entelloq Networks"
+            },
+            {
+              "ext": "https://github.com/darshprasad-cmd",
+              "label": "GitHub"
+            }
+          ],
+          "chips": [
+            "Who founded Entelloq?",
+            "What is Entelloq?"
+          ]
+        }
+      },
+      {
+        "id": "thanks",
+        "keywords": [
+          "thanks",
+          "thank you",
+          "thankyou",
+          "appreciate",
+          "cheers",
+          "great",
+          "awesome",
+          "nice",
+          "cool"
+        ],
+        "response": {
+          "html": "Glad that helped. Anything else you'd like to know?",
+          "chips": [
+            "Which product is right for me?",
+            "Is it free?",
+            "What’s new?"
+          ]
+        }
+      },
+      {
+        "id": "bye",
+        "keywords": [
+          "bye",
+          "goodbye",
+          "see you",
+          "that’s all",
+          "thats all",
+          "nothing else"
+        ],
+        "response": {
+          "html": "Anytime. Everything is one click away whenever you come back.",
+          "chips": [
+            "Which product is right for me?"
+          ]
+        }
+      }
+    ]
+  }
+}

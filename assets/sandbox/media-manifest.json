@@ -1,0 +1,74 @@
+{
+  "source": "Physics Entelloq Ultimate — Think Like a Physicist - Google Chrome 2026-09-20 21-41-58.mp4",
+  "source_dimensions": [
+    1920,
+    1200
+  ],
+  "source_duration_seconds": 53.9,
+  "output_video_format": "H.264 / yuv420p / 24 fps / no audio / faststart",
+  "notes": [
+    "Browser chrome removed; full app canvas and toolbars retained.",
+    "Source footage only; no simulated frames, stretching, or generated imagery.",
+    "No Physics hero variation created; these clips are intended for the Learning, in motion. gallery."
+  ],
+  "clips": [
+    {
+      "id": "sandbox-01",
+      "label": "Put motion in your hands",
+      "caption": "Grab and release a simulated mass with tracked hand gestures.",
+      "source_start": 25,
+      "source_end": 37,
+      "poster_second": 4.5,
+      "actions": "The cyan and magenta hand overlays track the user. A simulated mass is grabbed via the hand pointer, displaced, and released; the linked masses swing and leave motion trails.",
+      "video": "sandbox-01.mp4",
+      "poster": "sandbox-01.webp",
+      "video_bytes": 512724,
+      "poster_bytes": 35106,
+      "dimensions": [
+        1280,
+        704
+      ],
+      "crop": {
+        "x": 0,
+        "y": 132,
+        "width": 1920,
+        "height": 1056
+      },
+      "verified_duration_seconds": 12.0,
+      "verified_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x704 [SAR 1:1 DAR 20:11], 338 kb/s, 24 fps, 24 tbr, 12288 tbn (default)",
+      "no_audio_verified": true,
+      "faststart_verified": true,
+      "decode_verified": true
+    },
+    {
+      "id": "sandbox-02",
+      "label": "Choose with a gesture",
+      "caption": "Open the hand-controlled tool wheel while the simulation keeps moving.",
+      "source_start": 37,
+      "source_end": 51,
+      "poster_second": 1,
+      "actions": "The palm-centered radial menu opens with Mass, Planet, Charge+, Charge-, and Star options. A wedge highlights as the tracked hand moves; the menu closes and the masses continue swinging.",
+      "video": "sandbox-02.mp4",
+      "poster": "sandbox-02.webp",
+      "video_bytes": 543999,
+      "poster_bytes": 32630,
+      "dimensions": [
+        1280,
+        704
+      ],
+      "crop": {
+        "x": 0,
+        "y": 132,
+        "width": 1920,
+        "height": 1056
+      },
+      "verified_duration_seconds": 14.0,
+      "verified_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x704 [SAR 1:1 DAR 20:11], 308 kb/s, 24 fps, 24 tbr, 12288 tbn (default)",
+      "no_audio_verified": true,
+      "faststart_verified": true,
+      "decode_verified": true
+    }
+  ],
+  "total_video_bytes": 1056723,
+  "total_poster_bytes": 67736
+}

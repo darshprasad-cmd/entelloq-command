@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entelloq Networks — AI-powered learning and research ecosystems</title>
-<meta name="description" content="Entelloq Networks develops connected education platforms across physics and biology. Founded by Darsh Prasad. Featured in the South Asian Herald and recognised by The Legal Lock.">
+<meta name="description" content="Entelloq Networks builds interactive physics and biology learning experiences. Featured in The CEO Magazine and South Asian Herald, and recognised by The Legal Lock.">
 <meta property="og:title" content="Entelloq Networks">
 <meta property="og:description" content="Building AI-powered learning and research ecosystems — physics and biology, on one connected platform.">
 <meta property="og:type" content="website">
@@ -787,7 +787,8 @@ footer{
   </section>
     <div class="hero-base">
       <div class="wrap trust">
-        <span class="lbl">Recognised by</span>
+        <span class="lbl">Press &amp; recognition</span>
+        <a class="ceo" href="https://www.theceo.in/industry/education/entelloq-networks" target="_blank" rel="noopener">THE CEO MAGAZINE</a>
         <a class="herald" href="https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/" target="_blank" rel="noopener">South Asian Herald</a>
         <a class="lock" href="https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/" target="_blank" rel="noopener">THE LEGAL LOCK <span>· Journals LLP</span></a>
       </div>
@@ -941,6 +942,10 @@ footer{
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h8l3.5 3.5v13.5h-11.5z"/><path d="M14 3.5V7.5h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
               <span>Press feature</span><em>South Asian Herald</em>
             </a>
+            <a class="lead-link" href="https://www.theceo.in/industry/education/entelloq-networks" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h8l3.5 3.5v13.5h-11.5z"/><path d="M14 3.5V7.5h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg>
+              <span>Press feature</span><em>The CEO Magazine</em>
+            </a>
           </div>
         </aside>
         <div class="lead-bio reveal">
@@ -998,6 +1003,7 @@ footer{
             <div class="tl-item" style="--u-c:#6B7280"><span class="d">Jul 2026</span><b>South Asian Herald feature</b><p>National press coverage of the platform and its founding story.</p></div>
             <div class="tl-item" style="--u-c:#7BA815"><span class="d">Aug 2026</span><b>Biology Entelloq private beta</b><p>The dissection laboratory, Explore atlas and Biology Universe come together.</p></div>
             <div class="tl-item" style="--u-c:#B07D2B"><span class="d">Aug 2026</span><b>The Legal Lock recognition</b><p>Recognised for innovation in physics and science education.</p></div>
+            <div class="tl-item" style="--u-c:#6B7280"><span class="d">Sep 2026</span><b>The CEO Magazine feature</b><p>A profile of Darsh Prasad and Entelloq’s approach to interactive learning.</p><a class="link" href="https://www.theceo.in/industry/education/entelloq-networks" target="_blank" rel="noopener">Read the feature ↗</a></div>
           </div>
         </div>
       </div>
@@ -1051,6 +1057,7 @@ footer{
         <a href="https://github.com/darshprasad-cmd" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:entelloqnetworks@gmail.com">Contact</a>
         <a href="https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/" target="_blank" rel="noopener">Press</a>
+        <a href="https://www.theceo.in/industry/education/entelloq-networks" target="_blank" rel="noopener">The CEO Magazine</a>
       </div>
     </div>
     <div class="appearance-controls">    <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">
@@ -1174,6 +1181,9 @@ const TOPICS = [
 ];
 
 const ACTIONS = [
+  { title:'The CEO Magazine feature', sub:'Press · September 29, 2026', icon:'press', accent:'#6B7280',
+    ext:'https://www.theceo.in/industry/education/entelloq-networks',
+    keywords:['the ceo magazine','ceo magazine','theceo','press','article','news','feature','coverage'] },
   { title:'South Asian Herald feature', sub:'Press · July 30, 2026', icon:'press', accent:'#6B7280',
     ext:'https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/',
     keywords:['press','article','herald','south asian herald','news','feature','coverage'] },
@@ -1190,6 +1200,9 @@ const ACTIONS = [
 
 /* Newsroom resource grid — Atlassian-style labelled cards. */
 const RESOURCES = [
+  { lbl:'PRESS · THE CEO MAGAZINE', c:'#6B7280', t:'Entelloq Networks: Building Learning Environments Where Understanding Comes First',
+    p:'The CEO Magazine profiles founder Darsh Prasad and Entelloq’s approach to interactive learning, including the Physics sandbox and Biology dissection lab.',
+    link:'Read the feature', ext:'https://www.theceo.in/industry/education/entelloq-networks' },
   { lbl:'IN THE LAB', c:'#7BA815', t:'Step inside the dissection lab',
     p:'Watch three short recordings from Biology Entelloq, then explore the virtual lab yourself.',
     link:'Watch the recordings', anchor:'#dissection' },
@@ -1668,11 +1681,13 @@ const AG_INTENTS = [
       chips:['What is Entelloq?','Recognition and press'] }) },
 
   { id:'press', k:['press','news','media','herald','south asian','legal lock','recognition','award',
-      'coverage','article','featured','published','journal'],
-    r: () => ({ html:`Two so far. The <b>South Asian Herald</b> ran a feature on 30 July 2026 by Vivek Das —
+      'coverage','article','featured','published','journal','the ceo magazine','ceo magazine','theceo'],
+    r: () => ({ html:`<b>The CEO Magazine</b> profiled Entelloq on 29 September 2026, covering its founder and interactive Physics and Biology experiences.
+      The <b>South Asian Herald</b> ran a feature on 30 July 2026 by Vivek Das —
       “The Platform That Doesn't Just Teach — It Helps You Finally Understand”. In August 2026,
       <b>The Legal Lock</b> recognised the founder for innovation in physics and science education.`,
-      acts:[{ ext:'https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/',
+      acts:[{ ext:'https://www.theceo.in/industry/education/entelloq-networks', label:'Read The CEO Magazine feature' },
+            { ext:'https://southasianherald.com/the-platform-that-doesnt-just-teach-it-helps-you-finally-understand/',
               label:'Read the Herald feature' },
             { ext:'https://www.linkedin.com/posts/legallock-entelloq-darshprasad-share-7490012093371346944-X8OS/',
               label:'The Legal Lock recognition' }],

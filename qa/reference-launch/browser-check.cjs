@@ -9,6 +9,7 @@ const results = [], errors = [], badAssets = [], cancelledMedia = [];
 let browser, context, page;
 let config;
 const productIds = ['physics','biology'];
+const ceoURL = 'https://www.theceo.in/industry/education/entelloq-networks';
 async function check(name, fn) {
   try {await fn();results.push({name,pass:true});console.log('PASS ' + name);}
   catch(error) {
@@ -61,6 +62,7 @@ async function clickEscape(opener,panel,cls='open') {
     assert.deepEqual(config.products,productIds);
     assert.equal(await page.locator('#tabbar [role=tab]').count(),2);
     assert.equal(await page.locator('#eqx-list a').count(),3);
+    assert.equal(config.resources,7);
     assert.equal(await page.locator('#res-grid [data-res]').count(),config.resources);
     assert.equal(await page.locator('#proof-grid [data-launch]').count(),config.proof);
     assert.equal(await page.locator('[data-launch="quant"],a[href*="quant.entelloq.com"]').count(),0);
@@ -80,7 +82,7 @@ async function clickEscape(opener,panel,cls='open') {
       for(const other of productIds.filter(x=>x!==id))assert.equal(await page.locator('#panel-'+other).isVisible(),false);
     }
   });
-  await check('Search routes current apps and founder without removed Quant results',async()=>{
+  await check('Search routes current apps press and founder without removed Quant results',async()=>{
     await page.keyboard.press('Control+k');
     await page.locator('#pal-input').waitFor({state:'visible'});
     for(const query of ['Quant','Quant Entelloq','Black-Scholes']){
@@ -91,7 +93,7 @@ async function clickEscape(opener,panel,cls='open') {
       // "quant" remains a legitimate prefix of the preserved quantum-physics topic.
       if(query!=='Quant')assert.ok(text.includes('No'),query+' should have no result');
     }
-    for(const [query,expected] of [['projectile','Physics Entelloq'],['DNA','Biology Entelloq'],['founder','Leadership']]){
+    for(const [query,expected] of [['projectile','Physics Entelloq'],['DNA','Biology Entelloq'],['CEO Magazine','The CEO Magazine feature'],['founder','Leadership']]){
       await page.locator('#pal-input').fill(query);
       assert.ok((await page.locator('#pal-list').innerText()).includes(expected),query+' missing '+expected);
     }
@@ -131,7 +133,7 @@ async function clickEscape(opener,panel,cls='open') {
     assert.equal(await page.locator('#eqx-fab').evaluate(el=>el===document.activeElement),true);
     assert.equal(await page.locator('#eqx-fab').getAttribute('aria-expanded'),'false');
   });
-  await check('Assistant answers product and founder questions with working action targets',async()=>{
+  await check('Assistant answers product founder and press questions with working action targets',async()=>{
     await page.locator('#ag-fab').click();
     await page.locator('#ag-input').fill('Tell me about Biology');
     await page.locator('#ag-form button[type=submit]').click();
@@ -141,6 +143,10 @@ async function clickEscape(opener,panel,cls='open') {
     await page.locator('#ag-form button[type=submit]').click();
     await page.locator('#ag-log [data-ag-go="#leadership"]').waitFor();
     assert.ok((await page.locator('#ag-log').innerText()).includes('Darsh Prasad'));
+    await page.locator('#ag-input').fill('Tell me about The CEO Magazine feature');
+    await page.locator('#ag-form button[type=submit]').click();
+    await page.locator('#ag-log [data-ag-ext="'+ceoURL+'"]').waitFor();
+    assert.ok((await page.locator('#ag-log').innerText()).includes('29 September 2026'));
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#ag-fab').evaluate(el=>el===document.activeElement),true);
   });

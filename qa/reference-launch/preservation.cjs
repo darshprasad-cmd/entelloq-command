@@ -4,6 +4,8 @@
  * This checks preservation, not visual quality or browser interaction.
  * 2026-09-20 approved changes: retire Quant promotions/routes, refresh both
  * remaining previews, add recorded dissection/sandbox clips and update roster copy.
+ * 2026-10-06 approved additions: The CEO Magazine article in existing press,
+ * search, assistant, leadership, company milestone and footer surfaces.
  * The original baseline stays immutable; exceptions below are exact and local. */
 const fs = require('node:fs');
 const path = require('node:path');
@@ -41,6 +43,13 @@ const videoResource={lbl:'IN THE LAB',t:'Step inside the dissection lab',
   p:'Watch three short recordings from Biology Entelloq, then explore the virtual lab yourself.',link:'Watch the recordings',anchor:'#dissection'};
 const guideResource={lbl:'GUIDES',t:'Start with a guided walkthrough',
   p:'Find the hand-motion sandbox in Physics and the dissection lab in Biology, step by step.',link:'Explore the guides',anchor:'#tutorials'};
+const ceoURL='https://www.theceo.in/industry/education/entelloq-networks';
+const ceoAction={title:'The CEO Magazine feature',sub:'Press · September 29, 2026',ext:ceoURL,
+  keywords:['the ceo magazine','ceo magazine','theceo','press','article','news','feature','coverage']};
+const ceoResource={lbl:'PRESS · THE CEO MAGAZINE',
+  t:'Entelloq Networks: Building Learning Environments Where Understanding Comes First',
+  p:'The CEO Magazine profiles founder Darsh Prasad and Entelloq’s approach to interactive learning, including the Physics sandbox and Biology dissection lab.',
+  link:'Read the feature',ext:ceoURL};
 const currentApps=[{p:'physics'},{p:'biology'}];
 const videoAssistantAction={anchor:'#dissection',label:'Watch the dissection lab'};
 const videoIntent={id:'lab-video',keywords:['watch the lab','dissection video','lab video','dissection clips','recording','recorded footage'],
@@ -67,6 +76,10 @@ function expectedAssistant(intent) {
       r.acts=currentApps;break;
     case 'new':
       r.html='The homepage now includes <b>recorded dissection clips</b> from Biology Entelloq\n      and refreshed previews of both apps. You can also explore the Physics and Biology guides.';break;
+    case 'press':
+      expected.keywords.push('the ceo magazine','ceo magazine','theceo');
+      r.html=r.html.replace('Two so far. ', '<b>The CEO Magazine</b> profiled Entelloq on 29 September 2026, covering its founder and interactive Physics and Biology experiences.\n      ');
+      r.acts.unshift({ext:ceoURL,label:'Read The CEO Magazine feature'});break;
   }
   return expected;
 }
@@ -135,25 +148,32 @@ if (process.argv.includes('--capture-baseline')) {
     check(() => assert.ok(normalize(afterFooter).includes(copy), 'Footer content was lost: ' + copy));
   }
   for (const url of baseline.destinations.filter(url=>url!=='https://quant.entelloq.com')) check(() => assert.ok(current.destinations.includes(url), 'Destination was lost: ' + url));
+  // Require the explicitly requested article placements while leaving the
+  // original founder text, prior press coverage and baseline checks intact.
+  for(const [surface,fragment] of [['trust strip',html.match(/<div class="wrap trust">([\s\S]*?)<\/div>/)?.[1]||''],
+    ['leadership',sectionHTML(html,'leadership')],['company',sectionHTML(html,'company')],['footer',afterFooter]]){
+    check(()=>assert.ok(fragment.includes('href="'+ceoURL+'"'),'Missing CEO Magazine link in '+surface));
+  }
+  check(()=>assert.ok(normalize(sectionHTML(html,'company')).includes('Sep 2026 The CEO Magazine feature A profile of Darsh Prasad and Entelloq’s approach to interactive learning.'),'Missing approved CEO Magazine milestone copy'));
   for (const id of contractIds) check(() => assert.equal([...html.matchAll(new RegExp('\\bid=["\\\']' + id + '["\\\']','g'))].length, 1, 'Control #' + id + ' must remain unique'));
   const expectedProducts=baseline.data.PRODUCTS.filter(product=>product.id!=='quant').map(product=>{
     // Both creeds were already in the immutable contract; retain their exact text.
     const {shotToken,...retained}=product;
     return {...retained,shot:'assets/previews/'+product.id+'-current.webp'};
   });
-  const expectedResources=[videoResource,...baseline.data.RESOURCES.filter(item=>
+  const expectedResources=[ceoResource,videoResource,...baseline.data.RESOURCES.filter(item=>
     item.t!=='Quant Entelloq passes 700 registered users'&&item.launch!=='quant').map(item=>
       item.launch==='biology'?{...item,lbl:'BIOLOGY'}:item),guideResource];
-  const expectedActions=[...baseline.data.ACTIONS.slice(0,2),videoAction,...baseline.data.ACTIONS.slice(2)];
+  const expectedActions=[ceoAction,...baseline.data.ACTIONS.slice(0,2),videoAction,...baseline.data.ACTIONS.slice(2)];
   for(const [key,expected] of Object.entries({PRODUCTS:expectedProducts,TOPICS:baseline.data.TOPICS.filter(topic=>topic[1]!=='quant'),
     ACTIONS:expectedActions,RESOURCES:expectedResources,PROOF:baseline.data.PROOF.filter(item=>item.launch!=='quant')})){
-    check(()=>assert.deepEqual(current.data[key],expected,key+' differs beyond the approved roster/media refresh'));
+    check(()=>assert.deepEqual(current.data[key],expected,key+' differs beyond the approved roster/media refresh and press addition'));
   }
   for (const intent of baseline.data.assistant.filter(intent=>intent.id!=='quant')) {
     const now = current.data.assistant.find(item => item.id === intent.id);
     check(() => assert.ok(now, 'Assistant lost intent: ' + intent.id));
     if (!now) continue;
-    check(() => assert.deepEqual(now, expectedAssistant(intent), 'Assistant changed beyond the approved roster/media copy: ' + intent.id));
+    check(() => assert.deepEqual(now, expectedAssistant(intent), 'Assistant changed beyond the approved roster/media and press copy: ' + intent.id));
   }
   check(()=>assert.deepEqual(current.data.assistant.find(intent=>intent.id==='lab-video'),videoIntent,'Recorded lab assistant route differs'));
   check(()=>assert.deepEqual(current.data.assistant.map(intent=>intent.id).sort(),
@@ -188,5 +208,5 @@ if (process.argv.includes('--capture-baseline')) {
     check(() => new Function(match[2]));
   }
   if (failures.length) { console.error(failures.join('\n\n')); process.exitCode=1; }
-  else console.log('Preserved unaffected copy, founder/press/company data, links and controls against the immutable baseline. Approved refresh: 2 complete products, 11 topics, 5 actions, 6 newsroom items, 4 metrics, 17 assistant intents, 4 current WebP previews and 6 lazy video recordings.');
+  else console.log('Preserved unaffected copy, founder/press/company data, links and controls against the immutable baseline. Approved refresh and press addition: 2 complete products, 11 topics, 6 actions, 7 newsroom items, 4 metrics, 17 assistant intents, 4 current WebP previews and 6 lazy video recordings.');
 }

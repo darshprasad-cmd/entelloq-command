@@ -60,3 +60,4 @@ html{scroll-padding-top:110px}body{font-weight:300}button,.btn,.link{font-weight
 @media(max-width:1000px){.dissection-grid,.sandbox-grid{gap:18px}.dissection-grid figcaption strong,.dissection-grid figcaption h3,.sandbox-grid figcaption h3{font-size:18px}}
 @media(max-width:700px){.dissection-grid,.sandbox-grid{grid-template-columns:1fr;gap:32px}.dissection-grid video,.sandbox-grid video{border-radius:10px}.dissection-grid figcaption,.sandbox-grid figcaption{padding-top:14px}.keystone-feature+.keystone-feature{margin-top:48px;padding-top:32px}.feature-heading h3{font-size:28px}}
 @media(max-width:600px){.world-preview{top:26%}}
+.trust .ceo{font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.1em}

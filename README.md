@@ -27,8 +27,9 @@ visitors to the right product in one click.
   *Genome* → Biology, plus company destinations.
 - **Metrics** — 21+ live physics simulations, 89+ concepts mapped, six explanatory
   lenses and 3.8 billion years of evolutionary history in Biology.
-- **Recognition** — the South Asian Herald feature (July 30, 2026, by Vivek Das) and
-  The Legal Lock's recognition for innovation in physics and science education.
+- **Press and recognition** — The CEO Magazine profile (September 29, 2026), the
+  South Asian Herald feature (July 30, 2026, by Vivek Das), and The Legal Lock's
+  recognition for innovation in physics and science education.
 - **Leadership** — founder Darsh Prasad: the founding story and contact links.
 - **Company** — mission, vision, the meaning of the name, and milestones.
 - **Newsroom** — latest updates across the ecosystem.

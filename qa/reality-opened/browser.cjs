@@ -30,6 +30,7 @@ async function check(name,fn){try{await fn();results.push({name,pass:true});cons
   await page.evaluate(()=>{const s=document.querySelector('.aperture-scroll-stage'),h=document.querySelector('.launch-scene');scrollTo({top:(s.offsetHeight-h.offsetHeight)*.99,behavior:'instant'});});await page.waitForTimeout(200);
   const stopped=await page.locator('#aperture-light').getAttribute('data-frame');await page.waitForTimeout(250);assert.equal(await page.locator('#aperture-light').getAttribute('data-frame'),stopped);
   await page.setViewportSize({width:600,height:844});await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(100);
+  await page.waitForFunction(()=>{const i=document.querySelector('.aperture-art img');return i.complete&&i.naturalWidth>0&&i.currentSrc.includes('gateway-mobile');});
   assert.equal(await page.locator('#aperture-light').evaluate(c=>c.width*c.height),1);assert.match(await page.locator('.aperture-art img').evaluate(i=>i.currentSrc),/gateway-mobile/);
  });
  for(const width of [360,390,768,1440,1920])await check('Every section, reverse scrolling and resize at '+width,async()=>{

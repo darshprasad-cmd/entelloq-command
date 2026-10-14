@@ -1,0 +1,28 @@
+{
+  "created": "2026-10-14",
+  "tool": "built-in image_gen",
+  "purpose": "Mobile portrait compositions with title-safe top space",
+  "assets": [
+    {
+      "name": "gateway-mobile",
+      "prompt": "Use case: stylized-concept. Create a mobile portrait composition, 9:16 aspect ratio, of this same cinematic Entelloq gateway world. The supplied image is the visual reference and target for reframing. Preserve the exact high-end material language, object identity, scientific structures, palette, detailed physical lighting and dark graphite atmosphere. Recompose into a tall PORTRAIT website hero: the sculptural subject is now centered in the LOWER half, all of the main form clearly visible with generous side margins; the TOP 45% is very dark nearly black negative space for HTML headline and navigation. Nothing important cropped on the sides. Calm cinema composition. Do not add any objects. No text, no logos, no UI, no labels, no watermark. Output portrait 9:16, not landscape.",
+      "reference": "C:\\Users\\darsh\\entelloq-cinematic-assets\\gateway-original.png",
+      "source": "C:\\Users\\darsh\\.codex\\generated_images\\01a139dc-57ff-7000-9feb-024ea1376df1\\exec-c765c849-4124-4f48-97c2-dd6f604e6937.png",
+      "file": "C:\\Users\\darsh\\entelloq-cinematic-assets\\gateway-mobile-original.png"
+    },
+    {
+      "name": "physics-mobile",
+      "prompt": "Use case: stylized-concept. Create a mobile portrait composition, 9:16 aspect ratio, of this same cinematic Entelloq physics world. The supplied image is the visual reference and target for reframing. Preserve the exact high-end material language, object identity, scientific structures, palette, detailed physical lighting and dark graphite atmosphere. Recompose into a tall PORTRAIT website hero: the sculptural subject is now centered in the LOWER half, all of the main form clearly visible with generous side margins; the TOP 45% is very dark nearly black negative space for HTML headline and navigation. Nothing important cropped on the sides. Calm cinema composition. Do not add any objects. No text, no logos, no UI, no labels, no watermark. Output portrait 9:16, not landscape.",
+      "reference": "C:\\Users\\darsh\\entelloq-cinematic-assets\\physics-original.png",
+      "source": "C:\\Users\\darsh\\.codex\\generated_images\\01a139dc-57ff-7000-9feb-024ea1376df1\\exec-82c078ca-3df7-421a-b2c0-09908b74af98.png",
+      "file": "C:\\Users\\darsh\\entelloq-cinematic-assets\\physics-mobile-original.png"
+    },
+    {
+      "name": "biology-mobile",
+      "prompt": "Use case: stylized-concept. Create a mobile portrait composition, 9:16 aspect ratio, of this same cinematic Entelloq biology world. The supplied image is the visual reference and target for reframing. Preserve the exact high-end material language, object identity, scientific structures, palette, detailed physical lighting and dark graphite atmosphere. Recompose into a tall PORTRAIT website hero: the sculptural subject is now centered in the LOWER half, all of the main form clearly visible with generous side margins; the TOP 45% is very dark nearly black negative space for HTML headline and navigation. Nothing important cropped on the sides. Calm cinema composition. Do not add any objects. No text, no logos, no UI, no labels, no watermark. Output portrait 9:16, not landscape.",
+      "reference": "C:\\Users\\darsh\\entelloq-cinematic-assets\\biology-original.png",
+      "source": "C:\\Users\\darsh\\.codex\\generated_images\\01a139dc-57ff-7000-9feb-024ea1376df1\\exec-2223c429-d8fc-49da-bcea-a3dbae7ff46d.png",
+      "file": "C:\\Users\\darsh\\entelloq-cinematic-assets\\biology-mobile-original.png"
+    }
+  ]
+}

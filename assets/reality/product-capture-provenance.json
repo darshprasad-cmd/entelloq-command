@@ -1,0 +1,15 @@
+{
+  "capturedOn": "2026-10-14",
+  "kind": "Authentic local application screenshots, no generated user interface",
+  "physics": {
+    "file": "../previews/physics-current.webp",
+    "source": "physics-worked-answers/assets/reality-map.webp",
+    "description": "Physics concept map after the approved interior presentation update, authentic desktop Chromium capture, encoded at 1200 pixels wide."
+  },
+  "biology": {
+    "file": "../previews/biology-current.webp",
+    "source": "biology-entelloq-reality-release/docs/reality-opened/biology-current-app-1600.png",
+    "description": "Biology Home after the approved interior presentation update, authentic 1600 by 1000 desktop Chromium capture; encoded at 1200 pixels wide."
+  },
+  "recordings": "Previously captured authentic silent lab recordings retain their manifests in ../dissection and ../sandbox."
+}

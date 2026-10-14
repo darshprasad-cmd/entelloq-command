@@ -1,1 +1,4 @@
 qa/reference-launch/browser-results/
+qa/reality-opened/screenshots/
+qa/reality-*.png
+qa/reality-opened/*results.json

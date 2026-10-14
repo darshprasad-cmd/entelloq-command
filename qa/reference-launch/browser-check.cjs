@@ -234,15 +234,15 @@ async function clickEscape(opener,panel,cls='open') {
     await page.waitForFunction(()=>[...document.querySelectorAll('video')].every(video=>video.paused));
     await page.locator('#motion-toggle').evaluate(button=>button.click());
   });
-  await check('Scroll motion moves Earth and pause persists after reload',async()=>{
+  await check('Scroll motion moves aperture and pause persists after reload',async()=>{
     await page.evaluate(()=>window.scrollTo({top:200,behavior:'instant'}));
     await page.waitForTimeout(100);
-    assert.notEqual(await page.locator('.earth-image').evaluate(el=>getComputedStyle(el).transform),'none');
+    assert.notEqual(await page.locator('.aperture-art').evaluate(el=>getComputedStyle(el).transform),'none');
     await page.locator('#motion-toggle').click();
     assert.equal(await page.locator('body').evaluate(el=>el.classList.contains('motion-paused')),true);
-    assert.equal(await page.locator('.earth-image').evaluate(el=>el.style.transform),'');
+    assert.equal(await page.locator('.aperture-art').evaluate(el=>el.style.transform),'');
     await load();
-    assert.equal(await page.locator('#motion-toggle').innerText(),'Resume motion');
+    assert.equal(await page.locator('#motion-toggle').getAttribute('aria-label'),'Resume motion');
     assert.equal(await page.locator('.scroll-pending').count(),0);
     await page.locator('#motion-toggle').click();
   });
@@ -253,7 +253,7 @@ async function clickEscape(opener,panel,cls='open') {
     assert.deepEqual(await page.locator('video').evaluateAll(videos=>videos.filter(video=>video.error).map(video=>({src:video.currentSrc,code:video.error.code,message:video.error.message}))),[]);
     assert.deepEqual(badAssets,[]);
   });
-  for(const width of [320,390,601,768,1001,1100,1281,1366,1440])await check('Responsive controls and page width '+width,async()=>{
+  for(const width of [320,360,390,601,768,1001,1100,1281,1366,1440,1920])await check('Responsive controls and page width '+width,async()=>{
     await page.setViewportSize({width,height:900});
     await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
     const dimensions = await page.evaluate(()=>({page:document.documentElement.scrollWidth,viewport:innerWidth,
@@ -278,7 +278,7 @@ async function clickEscape(opener,panel,cls='open') {
     await load();
     assert.equal(await page.locator('body').evaluate(el=>el.classList.contains('motion-paused')),true);
     assert.equal(await page.locator('#motion-toggle').isDisabled(),true);
-    assert.equal(await page.locator('#motion-toggle').innerText(),'Reduced motion is on');
+    assert.equal(await page.locator('#motion-toggle').getAttribute('aria-label'),'Reduced motion is on');
     assert.equal(await page.locator('.scroll-pending').count(),0);
     await page.evaluate(()=>window.scrollTo({top:400,behavior:'instant'}));
     assert.equal(await page.locator('.earth-image').evaluate(el=>getComputedStyle(el).transform),'none');

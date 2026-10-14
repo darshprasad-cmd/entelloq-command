@@ -108,6 +108,13 @@ function contentOnly(value) {
   return value;
 }
 function capture(html) {
+  // Performance-only extraction: compare identical image content to the immutable
+  // embedded baseline even when the existing picture is now deferred as a file.
+  const imageIdentity=src=>{
+    if(src==='assets/founder-portrait.jpg'||src==='assets/company-banner.jpg')
+      return 'data:image/jpeg;base64,'+fs.readFileSync(path.join(root,src)).toString('base64');
+    return src;
+  };
   const data = contentOnly(evaluateData(html));
   const sectionCopy = Object.fromEntries(sections.map(id => [id,
     [...sectionHTML(html, id).matchAll(/<(p|h3|blockquote)\b[^>]*>([\s\S]*?)<\/\1>/gi)]
@@ -120,8 +127,8 @@ function capture(html) {
   const portrait = html.match(/<img\b[^>]*class="face"[^>]*src="([^"]+)"/i);
   const companyBanner = sectionHTML(html, 'company').match(/<img\b[^>]*src="([^"]+)"/i);
   return {baselineCommit, sourceSha256:digest(html), sectionCopy, landmarkText,
-    destinations, contractIds, founderPortraitSha256:digest(portrait[1]),
-    companyBannerSha256:digest(companyBanner[1]), data};
+    destinations, contractIds, founderPortraitSha256:digest(imageIdentity(portrait[1])),
+    companyBannerSha256:digest(imageIdentity(companyBanner[1])), data};
 }
 if (process.argv.includes('--capture-baseline')) {
   assert.ok(!fs.existsSync(path.join(__dirname, 'baseline.contract.json')), 'Baseline already exists; do not silently regenerate it');

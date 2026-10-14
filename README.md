@@ -1,5 +1,29 @@
 # Entelloq Networks — entelloq.com
 
+## Current launch: Reality, opened (14 October 2026)
+
+The public launch now uses original aperture/planet/cell artwork, independently composed mobile posters, a scroll-driven journey through the aperture, and a full-screen reveal of the Physics and Biology worlds. `reality.css` and `reality-motion.js` are scoped to the public gateway. The existing product data, search, assistant, account chooser, guided entry, founder/company information, press links and six authentic recordings remain intact.
+
+The user-supplied motion recording informed the new scene choreography, not its content or assets. The optical hero is an illustration; actual software is shown in the labelled captures and recordings. Physics and Biology screenshots in `assets/previews/*-current.webp` were refreshed from the current working applications.
+
+See [storyboard, preservation inventory and performance budgets](REALITY-OPENED.md). Original artwork prompts and generation provenance are in `assets/reality/`. Existing recording provenance remains in `assets/dissection/` and `assets/sandbox/`.
+
+Serve this folder on port 8766. Run both the retained regression suite and the new cinematic suite:
+
+```text
+node scripts/check-network.cjs
+node qa/reference-launch/preservation.cjs
+node --check reality-motion.js
+node --check dissection-media.js
+node qa/reference-launch/browser-check.cjs
+node qa/reality-opened/browser.cjs
+node qa/reality-opened/performance.cjs
+```
+
+Browser checks use the existing Playwright installation (`PLAYWRIGHT_PATH` can point to the module). Results are in `qa/reference-launch/browser-results/results.json` and `qa/reality-opened/results.json`. The cinematic suite captures every section at 390/1440 and hero/footer at 360/390/768/1440/1920. Pause, reduced-motion, no-JavaScript and failed-image states preserve the static composition and entry routes. Release verification records deployment completion, live file hashes, and bounded live browser checks separately.
+
+## Previous homepage release notes
+
 **One ecosystem. Infinite learning.**
 *Intelligence · Innovation · Impact — pronounced en-TELL-ock.*
 

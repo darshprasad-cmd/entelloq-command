@@ -1,26 +1,24 @@
 # Entelloq Networks — entelloq.com
 
-## Current launch: Reality, opened (14 October 2026)
+## Current launch: the original layout, refined (16 October 2026)
 
-The public launch now uses original aperture/planet/cell artwork, independently composed mobile posters, a scroll-driven journey through the aperture, and a full-screen reveal of the Physics and Biology worlds. `reality.css` and `reality-motion.js` are scoped to the public gateway. The existing product data, search, assistant, account chooser, guided entry, founder/company information, press links and six authentic recordings remain intact.
+The original Earth horizon, left headline and three compact product cards are restored at the user's request. The rest of the complete company and product page follows its earlier order. `launch-realism.css` adds realistic glass edges, contact shadows and subtle horizon light inside that existing composition. Current app interiors and their product captures remain unchanged; the supplied founder photo stays in its original color.
 
-The user-supplied motion recording informed the new scene choreography, not its content or assets. The optical hero is an illustration; actual software is shown in the labelled captures and recordings. Physics and Biology screenshots in `assets/previews/*-current.webp` were refreshed from the current working applications.
+`network.css` and `launch-motion.js` provide the earlier visual identity and restrained native-scroll parallax. Small responsive image variants reduce mobile transfer; scroll geometry is cached and hidden pages cancel pending paints. There is no continuous canvas or animation loop. Existing footage still loads on demand and pauses offscreen. The mobile ecosystem button stays available as a labelled 44px icon beside the assistant.
 
-See [storyboard, preservation inventory and performance budgets](REALITY-OPENED.md). Original artwork prompts and generation provenance are in `assets/reality/`. Existing recording provenance remains in `assets/dissection/` and `assets/sandbox/`.
+See [restoration scope and performance choices](CLASSIC-REALISM.md). The retired aperture design is documented in `REALITY-OPENED.md` for historical context only.
 
-Serve this folder on port 8766. Run both the retained regression suite and the new cinematic suite:
+Serve this folder on port 8766 and run:
 
 ```text
 node scripts/check-network.cjs
 node qa/reference-launch/preservation.cjs
-node --check reality-motion.js
+node --check launch-motion.js
 node --check dissection-media.js
 node qa/reference-launch/browser-check.cjs
-node qa/reality-opened/browser.cjs
-node qa/reality-opened/performance.cjs
 ```
 
-Browser checks use the existing Playwright installation (`PLAYWRIGHT_PATH` can point to the module). Results are in `qa/reference-launch/browser-results/results.json` and `qa/reality-opened/results.json`. The cinematic suite captures every section at 390/1440 and hero/footer at 360/390/768/1440/1920. Pause, reduced-motion, no-JavaScript and failed-image states preserve the static composition and entry routes. Release verification records deployment completion, live file hashes, and bounded live browser checks separately.
+Browser checks use the existing Playwright installation (`PLAYWRIGHT_PATH` can point to it). Set `ENTELLOQ_QA_URL` to check a local or deployed URL. Results are under `qa/reference-launch/browser-results/`. Release evidence records deployment, exact live file hashes and bounded browser behavior separately.
 
 ## Previous homepage release notes
 

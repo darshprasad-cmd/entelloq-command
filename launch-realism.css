@@ -1,0 +1,32 @@
+/* Original Earth-and-cards composition; realistic surfaces without a render loop. */
+.earth-shade{
+  background:linear-gradient(180deg,#02070916 8%,transparent 44%,#00050720 64%,#020709 100%),
+    radial-gradient(ellipse at 35% 57%,#e8ad6b14,transparent 39%);
+}
+.orbit-lines{opacity:.24}
+.world-card{
+  border-color:#d7eaf03d;
+  box-shadow:0 2px 3px #0005,0 18px 35px -12px #000b,inset 0 1px 0 #e8f6ff38;
+}
+.world-card::before{
+  content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(126deg,#f0f8ff16,transparent 25%,transparent 75%,#96baca08);
+  box-shadow:inset 1px 0 0 #ffffff12,inset 0 -1px 0 #0007;
+}
+.world-card::after{background:linear-gradient(180deg,#02080d08 30%,#01070a1a 49%,#01070add 82%,#01070af7 100%)}
+.world-preview{
+  border-color:#deeff84d;background:#081015;
+  box-shadow:0 1px 0 #ffffff20,0 4px 8px #0004,0 17px 28px -8px #000c;
+}
+.world-arrow{background:linear-gradient(145deg,#d8eef324,#d8eef309);box-shadow:inset 0 1px 0 #fff2}
+.world-copy{text-shadow:0 2px 14px #0009}
+.lead-id .face{filter:none}
+.btn:active,.hero-video-toggle:active{transform:scale(.98)}
+@media(max-width:768px){.cta-band::before{background-image:linear-gradient(#03101966,#030809ee),url("assets/launch/earth-horizon-small.webp")}}
+@media(max-width:600px){
+  .earth-shade{background:linear-gradient(180deg,#02070920,transparent 40%,#020709 100%)}
+  .world-card{box-shadow:0 2px 3px #0005,0 12px 25px -12px #000b,inset 0 1px 0 #e8f6ff38}
+  #eqx-fab{font-size:0;gap:0;width:44px;height:44px;padding:0;justify-content:center;border-radius:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+  #eqx-panel{bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+}
+@media(prefers-reduced-motion:reduce){.btn:active,.hero-video-toggle:active{transform:none}}

@@ -12,26 +12,32 @@
   try { paused = localStorage.getItem('eq_motion') === 'paused'; } catch (_) {}
   let frame = 0;
   let observer;
+  let heroHeight = 0, scrollRange = 1;
   const targets = [...document.querySelectorAll('.section .sec-head,.discovery-notes>a,.tutorial-card,.tl-item')];
   const enabled = () => !media.matches && !paused;
+  function measure() {
+    heroHeight = hero.offsetHeight;
+    scrollRange = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    schedule();
+  }
   function paint() {
     frame = 0;
     const y = window.scrollY;
     nav.classList.toggle('is-scrolled', y > 30);
     if (!enabled()) return;
-    const limit = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-    progress.style.transform = `scaleX(${Math.min(1, y / limit)})`;
-    if (y < hero.offsetHeight + 50) {
+    progress.style.transform = `scaleX(${Math.min(1, y / scrollRange)})`;
+    if (y < heroHeight + 50) {
       earth.style.transform = `translate3d(0,${Math.min(y * .15, 135)}px,0) scale(1.015)`;
       cards.forEach((card, i) => { card.style.transform = `translate3d(0,${Math.min(y * (.016 + i * .007), 18)}px,0) scale(1.025)`; });
     }
   }
-  function schedule() { if (!frame) frame = requestAnimationFrame(paint); }
+  function schedule() { if (!frame && !document.hidden) frame = requestAnimationFrame(paint); }
   function configure() {
     observer?.disconnect();
     body.classList.toggle('motion-ready', enabled());
     body.classList.toggle('motion-paused', !enabled());
     toggle.textContent = media.matches ? 'Reduced motion is on' : paused ? 'Resume motion' : 'Pause motion';
+    toggle.setAttribute('aria-label', toggle.textContent);
     toggle.setAttribute('aria-pressed', String(paused || media.matches));
     toggle.disabled = media.matches;
     targets.forEach(el => el.classList.remove('scroll-pending'));
@@ -51,7 +57,7 @@
       });
     }
     if (!enabled()) { earth.style.transform = ''; cards.forEach(card => card.style.transform = ''); }
-    schedule();
+    measure();
   }
   toggle.addEventListener('click', () => {
     paused = !paused;
@@ -65,7 +71,13 @@
     }
   });
   addEventListener('scroll', schedule, {passive:true});
-  addEventListener('resize', schedule, {passive:true});
+  addEventListener('resize', measure, {passive:true});
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && frame) { cancelAnimationFrame(frame); frame = 0; }
+    else schedule();
+  });
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(body);
+  document.fonts?.ready.then(measure);
   media.addEventListener('change', configure);
   configure();
 })();

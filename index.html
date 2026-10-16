@@ -23,7 +23,7 @@
 <link rel="icon" id="favicon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="%23101216"/><circle cx="16" cy="16" r="11" stroke="%23AEB4C0" stroke-width="1.5" fill="none" opacity=".6" stroke-dasharray="52 17"/><circle cx="16" cy="16" r="3.4" fill="%23AEB4C0"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,450;1,9..144,400&family=Inter:wght@300;400;450;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,450;1,9..144,400&family=Inter:wght@300;400;450;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Entelloq Networks",
  "slogan":"One ecosystem. Infinite learning.",
@@ -698,19 +698,12 @@ footer{
   .reveal{ opacity:1; transform:none; }
 }
 </style>
-<link rel="preload" href="assets/reality/gateway-1600.webp" as="image" media="(min-width: 601px)" fetchpriority="high">
+<link rel="preload" href="assets/launch/earth-horizon-small.webp" as="image" media="(max-width:768px)" fetchpriority="high">
+<link rel="preload" href="assets/launch/earth-horizon.webp" as="image" media="(min-width:769px)" fetchpriority="high">
 <link rel="stylesheet" href="network.css">
-<link rel="stylesheet" href="reality.css">
+<link rel="stylesheet" href="launch-realism.css">
 </head>
-<body class="reality-gateway">
-<script>
-/* Reserve the cinematic stage before first paint; no-JavaScript stays static. */
-(() => {
-  let paused=false;try{paused=localStorage.getItem('eq_motion')==='paused';}catch{}
-  const on=!paused&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!navigator.connection?.saveData;
-  document.body.classList.add(on?'motion-ready':'motion-paused');
-})();
-</script>
+<body>
 <a class="skip-link" href="#products">Skip to products</a>
 <div class="reading-progress" aria-hidden="true"></div>
 
@@ -730,50 +723,68 @@ footer{
     <a href="#leadership">Leadership</a>
     <a href="#company">Company</a>
   </nav>
-  <div class="nav-right"><button class="motion-nav" id="motion-toggle" aria-pressed="false" aria-label="Pause motion"><span aria-hidden="true">Ⅱ</span><span class="motion-label">Pause motion</span></button>
+  <div class="nav-right">
 
     <button class="icon-btn" data-open-palette aria-label="Search (Ctrl K)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
     </button>
     <button class="login-btn" data-open-switcher aria-label="Log in — choose your Entelloq app">Log in</button>
     <button class="launch-btn" data-open-switcher>
-      <span>Enter Entelloq</span>
+      <span>Get Started</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </button>
   </div>
-
-<button class="mobile-menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span></button></header>
-<nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile navigation" hidden><a href="#worlds">Choose your world</a><a href="#dissection">In motion</a><a href="#tutorials">Guides</a><a href="#leadership">Our founder</a><a href="#newsroom">Press</a><a href="#faq">Questions</a></nav>
+  <p class="nav-motto">Same<br>curiosity.<br>A brighter<br>world.</p>
+</header>
 
 <main id="top">
-
-  <div class="aperture-scroll-stage">
+  <!-- ============ HERO (headline → CTAs → product visual → trust strip) ============ -->
   <section class="hero launch-scene" aria-labelledby="launch-title">
-    <div class="aperture-art" aria-hidden="true"><picture><source media="(max-width:600px)" srcset="assets/reality/gateway-mobile.webp"><img class="earth-image" src="assets/reality/gateway-1600.webp" width="1600" height="1067" fetchpriority="high" alt=""></picture><canvas id="aperture-light"></canvas></div>
-    <div class="hero-vignette" aria-hidden="true"></div>
-    <div class="portal-destination" aria-hidden="true" inert>
-      <div class="portal-world portal-physics"><img src="assets/reality/physics-1200.webp" alt="" width="1200" height="675" loading="lazy"><div class="portal-world-copy"><span>01 / THE UNIVERSE OUTSIDE</span><h2>Change the<br>conditions.</h2><a href="https://physics.entelloq.com">Enter Physics <span aria-hidden="true">↗</span></a></div></div>
-      <div class="portal-world portal-biology"><img src="assets/reality/biology-1200.webp" alt="" width="1200" height="675" loading="lazy"><div class="portal-world-copy"><span>02 / THE WORLD WITHIN</span><h2>Look a<br>little closer.</h2><a href="https://biology.entelloq.com">Enter Biology <span aria-hidden="true">↗</span></a></div></div>
-      <p class="portal-stage-caption">THIS IS WHERE THE EXPLORATION BEGINS.</p>
-    </div>
+    <div class="earth-scene" aria-hidden="true"><picture><source media="(max-width:768px)" srcset="assets/launch/earth-horizon-small.webp"><img class="earth-image" src="assets/launch/earth-horizon.webp" srcset="assets/launch/earth-horizon-small.webp 768w, assets/launch/earth-horizon.webp 1536w" sizes="100vw" alt="" width="1536" height="1024" fetchpriority="high"></picture><div class="earth-shade"></div></div>
+    <svg class="orbit-lines" viewBox="0 0 1536 1024" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M22 685C-8 544 855 587 1558 220"/><path d="M139 567C675 537 1112 741 1540 987"/></svg>
     <div class="wrap launch-wrap">
-      <div class="launch-copy"><p class="network-eyebrow"><i></i> A NEW WAY TO SEE</p>
-        <h1 id="launch-title">Reality is<br>yours to<br><em>explore.</em></h1>
-        <p class="sub">Explore physics. Discover biology.<br>Build understanding through experiments.</p>
-        <div class="hero-cta"><a class="btn primary" href="#worlds">Choose your world <span aria-hidden="true">↗</span></a><a class="motion-link" href="#dissection"><span class="play-circle" aria-hidden="true">▷</span>See Entelloq in motion</a></div>
+      <div class="launch-main">
+        <div class="launch-copy">
+          <p class="network-eyebrow">ENTELLOQ NETWORKS</p>
+          <h1 id="launch-title">Understand<br>A More Complex<br><em>World.</em></h1>
+          <p class="sub">Entelloq Networks builds AI-native learning experiences that make the world's most complex subjects intuitive, interactive, and real — starting with physics and biology.</p>
+          <div class="hero-cta"><a class="btn primary" href="#products">Explore Our Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="watch-guide" href="#tutorials"><span class="play-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span>Explore the Guides<small>Two guided walkthroughs</small></span></a></div>
+        </div>
+        <div class="world-cards" aria-label="Explore Physics, Biology and the dissection lab">
+        <a class="world-card world-physics" href="https://physics.entelloq.com" aria-label="Open Physics Entelloq">
+          <img class="world-image" src="assets/launch/physics-black-hole.webp" srcset="assets/launch/physics-black-hole-small.webp 540w, assets/launch/physics-black-hole.webp 1024w" sizes="(max-width:600px) 76vw, (max-width:1000px) 29vw, 18vw" alt="" width="1024" height="1536" fetchpriority="high">
+          <span class="world-number">01</span><span class="world-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="world-preview" src="assets/previews/physics-launch.webp" alt="Current Physics Entelloq start screen" width="1600" height="1000" decoding="async">
+          <div class="world-copy"><h2>Physics<br>Entelloq</h2><p>See. Simulate. Understand.</p><span class="world-line" aria-hidden="true"></span></div>
+        </a>
+        <a class="world-card world-biology" href="https://biology.entelloq.com" aria-label="Open Biology Entelloq">
+          <img class="world-image" src="assets/launch/biology-dna.webp" srcset="assets/launch/biology-dna-small.webp 540w, assets/launch/biology-dna.webp 1024w" sizes="(max-width:600px) 76vw, (max-width:1000px) 29vw, 18vw" alt="" width="1024" height="1536" fetchpriority="high">
+          <span class="world-number">02</span><span class="world-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="world-preview" src="assets/previews/biology-launch.webp" alt="Current Biology Entelloq start screen" width="1600" height="1000" decoding="async">
+          <div class="world-copy"><h2>Biology<br>Entelloq</h2><p>Explore Life, Layer by Layer.</p><span class="world-line" aria-hidden="true"></span></div>
+        </a>
+        <article class="world-card world-dissection" aria-label="Recorded dissection preview">
+          <video class="world-image hero-dissection-video" muted loop playsinline preload="none" width="720" height="900" poster="assets/dissection/dissection-hero.webp" data-src="assets/dissection/dissection-hero.mp4" aria-label="Recorded virtual frog dissection"></video>
+          <span class="world-number">03</span>
+          <button class="hero-video-toggle" type="button" aria-label="Play dissection preview" aria-pressed="false"><span aria-hidden="true">▶</span><span>Play preview</span></button>
+          <div class="world-copy"><h2>Inside<br>the lab</h2><p>Life, layer by layer.</p><a class="world-lab-link" href="#dissection">Watch the lab <span aria-hidden="true">↗</span></a></div>
+        </article>
+        </div>
       </div>
-      <div class="hero-side-note"><span>01 — THE APERTURE</span><p>From the scale of the universe<br>to the world within.</p></div>
-      <div class="hero-foot"><a href="#worlds" class="scroll-cue"><span aria-hidden="true">↓</span> SCROLL TO OPEN REALITY</a><span>PHYSICS &nbsp; / &nbsp; BIOLOGY</span><span>BUILT FOR THE CURIOUS.</span></div>
-    </div>
-  </section>
-  </div>
-  <section id="worlds" class="worlds-section" aria-labelledby="worlds-title">
-    <div class="wrap"><div class="worlds-intro"><p class="kicker">01 / CHOOSE YOUR SCALE</p><h2 id="worlds-title">One reality.<br><span>Infinite ways in.</span></h2><p>Pull on a force. Look inside a cell.<br>The best way to understand something<br>is to get closer to it.</p></div>
-      <div class="world-cards">
-        <article class="world-card world-physics"><div class="world-image-wrap"><img class="world-image" src="assets/reality/physics-1200.webp" width="1200" height="800" alt="Illustrative planet illuminated by a fine blue atmospheric edge" loading="lazy"><div class="world-overlay"></div><div class="world-title"><span>01 / THE ORBITAL OBSERVATORY</span><h3>Physics.</h3><p>Make the invisible tangible.</p><a href="https://physics.entelloq.com" class="world-entry">Enter Physics <span aria-hidden="true">↗</span></a></div></div><div class="world-product"><img class="world-preview" src="assets/previews/physics-current.webp" alt="Actual Physics Entelloq learning interface" width="1600" height="1000" loading="lazy"><div><span>FROM WONDER TO UNDERSTANDING</span><p>Change the conditions.<br>See the laws at work.</p><a href="https://physics.entelloq.com/?tutorial=hands">Try the hand-motion guide ↗</a></div></div></article>
-        <article class="world-card world-biology"><div class="world-image-wrap"><img class="world-image" src="assets/reality/biology-1200.webp" width="1200" height="800" alt="Illustrative translucent animal cell with a nucleus and mitochondria" loading="lazy"><div class="world-overlay"></div><div class="world-title"><span>02 / THE WORLD WITHIN</span><h3>Biology.</h3><p>Life, seen a little closer.</p><a href="https://biology.entelloq.com" class="world-entry">Enter Biology <span aria-hidden="true">↗</span></a></div></div><div class="world-product"><img class="world-preview" src="assets/previews/biology-current.webp" alt="Actual Biology Entelloq learning interface" width="1600" height="1000" loading="lazy"><div><span>LOOK. EXPLORE. CONNECT.</span><p>Discover the structures.<br>Understand the living system.</p><a href="https://biology.entelloq.com/app.html?tutorial=dissection">Try the dissection guide ↗</a></div></div></article>
+      <div class="launch-mission">
+        <div><span class="mission-eyebrow">Built for a more curious tomorrow</span><h2>Better Learning<br>Builds a Brighter Tomorrow.</h2></div>
+        <p>We believe that deeper understanding leads to better questions, better decisions, and a more thoughtful world. Entelloq Networks exists to make that understanding accessible to everyone.</p>
+        <div class="mission-note"><p>One ecosystem.<br>Infinite learning.</p><a href="#company">Intelligence. Innovation. Impact.</a></div>
       </div>
-      <p class="scene-caption">Cinematic scientific illustrations above; actual product interfaces below. Explore at your own pace.</p>
+      <div class="launch-bottom">
+        <div class="launch-stats" aria-label="Entelloq at a glance">
+          <a href="#products"><strong>2</strong><span>Learning apps</span><small>one connected ecosystem</small></a>
+          <a href="#dissection"><strong>3</strong><span>Lab clips</span><small>recorded in Biology Entelloq</small></a>
+          <a href="#proof"><strong>21+</strong><span>Physics simulations</span><small>in the Ultimate release</small></a>
+          <a href="#proof"><strong>89+</strong><span>Mapped concepts</span><small>in a living physics graph</small></a>
+        </div>
+        <a class="scroll-cue" href="#products">Scroll to explore<span aria-hidden="true"><i></i></span></a>
+      </div>
     </div>
   </section>
     <div class="hero-base">
@@ -801,14 +812,14 @@ footer{
         <a href="#dissection"><span>03 / INSIDE THE LAB</span><h3>See curiosity in motion.</h3><p>Watch recorded moments from the virtual dissection lab, then explore it yourself.</p><b>Watch the lab ↗</b></a>
       </div>
       <div class="tabbar" role="tablist" aria-label="Entelloq products" id="tabbar"></div>
-      <div id="panels"></div><details class="launch-gallery"><summary>See the product welcome screens <span aria-hidden="true">+</span></summary><div><img src="assets/previews/physics-launch.webp" alt="Physics welcome screen before this cinematic refresh" width="1600" height="1000" loading="lazy"><img src="assets/previews/biology-launch.webp" alt="Biology welcome screen before this cinematic refresh" width="1600" height="1000" loading="lazy"></div></details>
+      <div id="panels"></div>
     </div>
   </section>
 
   <section class="section dissection-section" id="dissection" aria-labelledby="dissection-title">
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">EXPLORE ENTELLOQ IN ACTION</span><h2 class="h2" id="dissection-title">Learning, in motion.</h2><p>Two ways to turn curiosity into understanding. Watch real recordings from the Physics sandbox and Biology dissection lab, then try them yourself.</p></div>
-      <div class="recording-spotlight"><div><span class="kicker">THIS IS THE REAL THING.</span><h3>Not just something<br>to watch.<br><em>Something to do.</em></h3><p>Actual recordings from the Entelloq laboratories. The next experiment is yours.</p><a class="watch-guide" href="#tutorials">Find your first experiment <span aria-hidden="true">↗</span></a></div><figure><video class="hero-dissection-video" muted loop playsinline preload="none" width="720" height="900" poster="assets/dissection/dissection-hero.webp" data-src="assets/dissection/dissection-hero.mp4" aria-label="Recorded virtual frog dissection"></video><button class="hero-video-toggle" type="button" aria-label="Play dissection preview" aria-pressed="false">Play preview</button><figcaption>RECORDED IN BIOLOGY ENTELLOQ / SILENT</figcaption></figure></div><div class="keystone-feature biology-feature">
+      <div class="keystone-feature biology-feature">
       <div class="feature-heading"><span>01 / BIOLOGY ENTELLOQ</span><h3>The dissection lab.</h3><p>Follow the virtual dissection from the first incision to the anatomy beneath.</p></div>
       <div class="dissection-grid">
         <figure class="dissection-clip">
@@ -917,7 +928,7 @@ footer{
       <div class="lead-grid">
         <aside class="lead-card card reveal">
           <div class="lead-id">
-            <img class="face" src="assets/founder-portrait.jpg" alt="Portrait of Darsh Prasad, founder of Entelloq Networks">
+            <img class="face" src="assets/founder-portrait.jpg" alt="Portrait of Darsh Prasad, founder of Entelloq Networks" loading="lazy" width="512" height="512">
             <div><b>Darsh Prasad</b><span>Founder, Entelloq Networks</span></div>
           </div>
           <div class="lead-links">
@@ -1004,11 +1015,10 @@ footer{
     </div>
   </section>
 
-<section class="section reality-faq" id="faq"><div class="wrap faq-layout"><div><span class="kicker">A FEW GOOD QUESTIONS</span><h2 class="h2">Curiosity starts<br>right here.</h2></div><div class="faq-items"><details><summary>Where should I begin?<span aria-hidden="true">+</span></summary><p>Choose Physics to explore forces, motion and waves, or Biology to investigate living systems. Each app includes guided ways to get started.</p></details><details><summary>Can I explore for free?<span aria-hidden="true">+</span></summary><p>Physics and Biology are currently free to explore. Use the guest entry inside each application to begin, or use its existing account options.</p></details><details><summary>Do I need a camera?<span aria-hidden="true">+</span></summary><p>No. The learning experiences have conventional controls. Some optional hand-tracking features use a camera; the guides explain the requirements before you start.</p></details><details><summary>Are these real scientific experiments?<span aria-hidden="true">+</span></summary><p>They are interactive educational models and virtual laboratories with stated assumptions. The cinematic imagery is illustrative. The demonstrations marked as recordings show the actual software.</p></details><details><summary>Can I use Entelloq on my phone?<span aria-hidden="true">+</span></summary><p>You can browse the launch pages and learning content on a phone. Some advanced labs and camera interactions work best on desktop. Each product explains the controls available.</p></details><details><summary>Can I turn off the motion?<span aria-hidden="true">+</span></summary><p>Yes. Use Pause motion in the navigation. Your device’s reduced-motion preference also turns off automatic decorative motion. All content and actions remain available.</p></details></div></div></section>
   <!-- ============ CTA BAND ============ -->
   <section class="cta-band">
     <div class="wrap">
-      <span class="kicker">REALITY, OPENED.</span><h2>A better question<br>changes <em>everything.</em></h2>
+      <h2>Start understanding today</h2>
       <p>Every Entelloq product is free in early access. Choose a discipline and begin.</p>
       <div class="row">
         <button class="btn primary" data-open-switcher>Get started
@@ -1054,8 +1064,8 @@ footer{
     </div>
     <div class="appearance-controls">    <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode">
       <svg id="theme-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></svg>
-    </button><span>Light / dark appearance</span></div>
-    <div class="footer-wordmark" aria-hidden="true">entelloq<span>®</span></div><div class="foot-base">
+    </button><span>Light / dark appearance</span><button id="motion-toggle" aria-pressed="false">Pause motion</button></div>
+    <div class="foot-base">
       <span>© 2026 Entelloq Networks. All rights reserved.</span>
       <span>Entelloq — pronounced en-TELL-ock</span>
     </div>
@@ -2033,7 +2043,7 @@ agPanel.addEventListener('keydown', e => {
 </script>
 
 <!-- ENTELLOQ-ECOSYSTEM-SWITCHER:END -->
-<script src="reality-motion.js" defer></script>
+<script src="launch-motion.js" defer></script>
 <script src="dissection-media.js" defer></script>
 </body>
 </html>

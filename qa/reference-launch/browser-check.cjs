@@ -234,13 +234,13 @@ async function clickEscape(opener,panel,cls='open') {
     await page.waitForFunction(()=>[...document.querySelectorAll('video')].every(video=>video.paused));
     await page.locator('#motion-toggle').evaluate(button=>button.click());
   });
-  await check('Scroll motion moves aperture and pause persists after reload',async()=>{
+  await check('Scroll motion moves Earth and pause persists after reload',async()=>{
     await page.evaluate(()=>window.scrollTo({top:200,behavior:'instant'}));
     await page.waitForTimeout(100);
-    assert.notEqual(await page.locator('.aperture-art').evaluate(el=>getComputedStyle(el).transform),'none');
+    assert.notEqual(await page.locator('.earth-image').evaluate(el=>getComputedStyle(el).transform),'none');
     await page.locator('#motion-toggle').click();
     assert.equal(await page.locator('body').evaluate(el=>el.classList.contains('motion-paused')),true);
-    assert.equal(await page.locator('.aperture-art').evaluate(el=>el.style.transform),'');
+    assert.equal(await page.locator('.earth-image').evaluate(el=>el.style.transform),'');
     await load();
     assert.equal(await page.locator('#motion-toggle').getAttribute('aria-label'),'Resume motion');
     assert.equal(await page.locator('.scroll-pending').count(),0);

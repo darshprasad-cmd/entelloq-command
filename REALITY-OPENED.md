@@ -1,4 +1,6 @@
-# Reality, opened — gateway launch
+# Reality, opened — historical gateway design
+
+This design was superseded on 16 October 2026 at the user's request. See `CLASSIC-REALISM.md` for the restored launch layout and current validation commands. The aperture runtime and its scene-specific tests are retired; this document preserves the previous design record only.
 
 ## Storyboard
 
